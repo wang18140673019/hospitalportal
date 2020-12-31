@@ -1,0 +1,10 @@
+document.writeln("<ul>");
+document.writeln("<li><a href=\"/Content/Detail/c242\">关于我们</a></li>");
+document.writeln("<li><a href=\"/List/News/555\">Ⅰ期临床试验</a></li>");
+document.writeln("<li><a href=\"/List/News/244\">公告通知</a></li>");
+document.writeln("<li><a href=\"/List/News/245\">申办者入口</a></li>");
+document.writeln("<li><a href=\"/List/News/246\">研究者入口</a></li>");
+document.writeln("<li><a href=\"/List/News/243\">资质专业</a></li>");
+document.writeln("<li><a href=\"/List/News/248\">下载中心</a></li>");
+document.writeln("<li><a href=\"/Content/Detail/c232\">联系我们</a></li>");
+document.writeln("</ul>");

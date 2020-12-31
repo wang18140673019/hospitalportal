@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>上海市第一人民医院自助服务中心</title>
+    <meta http-equiv="Content-Type" content="text/plain; charset=gb2312">
+    <link href="https://guahao.shgh.cn/yygh/Content/themes/base/css/master.css" rel="stylesheet" type="text/css" />
+    <!--1.11.3-->
+    <script src="https://guahao.shgh.cn/yygh/Scripts/jquery.min.js" type="text/javascript"></script>
+     <!--1.2.1-->
+   <script src="https://guahao.shgh.cn/yygh/Scripts/jquery-migrate.min.js"></script>
+    <script src="https://guahao.shgh.cn/yygh/Scripts/base/jquery.ui.pager.1.0.js" type="text/javascript"></script>
+   <script src="https://guahao.shgh.cn/yygh/Scripts/jqueryui/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="https://guahao.shgh.cn/yygh/Scripts/jqueryui/jquery-ui.min.css" rel="stylesheet"type="text/css" />
+    
+    <!--1.9-->
+    
+    <link href="https://guahao.shgh.cn/yygh/Content/themes/base/jqueryui/jquery.ui.datepicker.min.css" rel="stylesheet"type="text/css" />
+    <script src="https://guahao.shgh.cn/yygh/Scripts/Base/Beyondbit.1.0.js" type="text/javascript"></script>
+    <script src="https://guahao.shgh.cn/yygh/Scripts/jquery.unobtrusive-ajax.min.js?v=1" type="text/javascript"></script>
+    <script src="https://guahao.shgh.cn/yygh/Scripts/layer/layer.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        #menubg {
+            background: url(/Content/themes/base/images/list-hover.jpg) no-repeat left top;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        /* 遮挡层 BEGIN */
+        function ShowMask() {
+            //iframe层
+            layer.open({
+                type: 2,
+                title: '上海市第一人民医院自助服务中心',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['750px', '530px'],
+                offset: [80, ($(window).width() - 750) / 2],
+                content: '/LoginAndReg/web/UserLogin.aspx'
+            });
+        }
+
+
+        function NoticeInfo() {
+            //iframe层
+            layer.open({
+                type: 2,
+                title: '上海市第一人民医院门诊告患者书',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['750px', '580px'],
+                offset: [60, ($(window).width() - 750) / 2],
+                content: '/yygh/Home/NoticeInfo'
+            });
+        }
+
+        function HideMask() {
+            layer.closeAll();
+        }
+        /* 遮挡层 END */
+
+    </script>
+    <script type="text/javascript">
+        function openReg() {
+            ShowMask();
+        }
+        function openToReg(url) {
+            layer.open({
+                type: 2,
+                title: '上海市第一人民医院自助服务中心',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['750px', '530px'],
+                offset: [80, ($(window).width() - 750) / 2],
+                content: '/LoginAndReg/web/UserLogin.aspx' + "?url=" + url
+            });
+        }
+        $(function () {
+            if ("false" == "true") {
+                openReg();
+            }
+        });
+
+            function closePage(info, vbAdmin) {
+                if (info == "登录成功") {
+                    parent.$("#spanUserInfo").html("欢迎您：&nbsp;&nbsp;<a href='DoctorScheduleList.htm#' onclick='goToUrl();'>[退出]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+
+                    parent.$(".aa").each(function () {
+                        $(this).attr("class");
+                        $(this).attr("data-ajax", false);
+                        $(this).attr("data-ajax");
+                    });
+
+                if (vbAdmin == "114admin") {
+                    parent.window.location.href = "/yygh/Home/QueryPhoneAdminList";
+                    
+                }
+                else if (vbAdmin == "114") {
+                    parent.window.location.href = "/yygh/Home/Reservation";
+                }
+                else if (("," + "13681900605,13003179125" + ",").indexOf("," + "" + ",") > -1) {
+
+                    parent.window.location.href = "/yygh/Home/Reservation";
+                }
+                else {
+                    parent.window.location.href = parent.window.location.href;
+                }
+    }
+    parent.HideMask();
+}
+
+function goToUrl() {
+    if (confirm("确定要退出么？")) {
+        window.location.href = "/yygh/Home/LoginOut";
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="head">
+        <div class="top_nav color">
+            <a href="http://www.firsthospital.cn/index.html">医院主页</a> | <a href="Reservation.htm">预约首页</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_l">
+            <div class="title_1">
+                快捷菜单
+            </div>
+            <div class="menu">
+                <ul>
+                        <li><a href="https://guahao.shgh.cn/yygh/">操作攻略</a></li>
+                        <li><a href="Reservation.htm">预约挂号</a></li>
+                        <li><a href="https://guahao.shgh.cn/yygh/Home/DoctorScheduleList?NBY=N">专家排班</a></li>
+                        <li><a href="https://guahao.shgh.cn/yygh/Home/ForeignExpertQuery">外籍专家</a></li>
+                             <li><a data-ajax="true" class="aa" onclick="openReg()">我的预约单</a></li>
+                            <li><a data-ajax="true" class="aa" onclick="openReg()">历史预约单</a></li>
+                            <li><a data-ajax="true" class="aa" onclick="openReg()">我的专家</a></li>
+                           <li><a data-ajax="true" class="aa" onclick="openReg()">我的报告</a></li>
+                           <li><a data-ajax="true" class="aa" onclick="openReg()">个人中心</a></li>
+                    
+                </ul>
+            </div>
+            <div class="title_1">
+                常见问题
+            </div>
+            <div class="text">
+                <marquee style="height: 200px" direction="up" onmouseout="this.start()" onmouseover="this.stop()"
+                    scrollamount="2">
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=6">+[问]：外籍专家预约说明</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=6">
+                                  -(答)： 本项目为国际远程会诊，通过我院的远程医疗会诊系统，由中方专家结合患者及家属的意见要求，征询国际专家的...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=4">+[问]：预约挂号需要收费吗</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=4">
+                                  -(答)： 上海第一人民医院网上预约服务是面向全国患者提供的公益、免费预约挂号服务；市民通过预约网站不需要支付预...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=3">+[问]：预约挂号需要注册吗</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=3">
+                                  -(答)： 通过预约网站或预约电话首次预约时，必须提供有效上海市社保卡号或医联卡号；有效身份证、护照或军官证等证...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=2">+[问]：预约挂号指南</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=2">
+                                  -(答)： 网站左上方快捷菜单点击“注册”按钮   根据提示文字的信息，在注册用户界面中填写信息，待填写完全正确...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=1">+[问]：预约挂号须知</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=1">
+                                  -(答)：  一、预约适用对象：面向全国所有患者，预约不收取任何费用。  二、患者类别：  1.    初诊患者...</a></span><br />
+                        <span><br /></span>
+                </marquee>
+            </div>
+        </div>
+        <div class="main_r">
+            <div class="title_2">
+                <div style="float: left">当前位置 &gt; 专家排班</div>
+                <span id="spanUserInfo">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </div>
+            <script src="https://guahao.shgh.cn/yygh/Scripts/jquery.min.js" type="text/javascript"></script>
+<link href="https://guahao.shgh.cn/yygh/Content/themes/base/jqueryui/jquery-ui.min.css" rel="stylesheet"type="text/css" />
+<script src="https://guahao.shgh.cn/yygh/Scripts/jqueryui/jquery-ui-1.9.0.min.js" type="text/javascript"></script>
+<script src="https://guahao.shgh.cn/yygh/Scripts/base/jquery.ui.pager.1.0.js" type="text/javascript"></script>
+<script src="https://guahao.shgh.cn/yygh/Scripts/jquery.freezeheader.js" type="text/javascript"></script>
+<style type="text/css">
+    .deptbg
+    {
+        background: #A32528;
+        color: white !important;
+    }
+</style>
+ 
+<input id="NBY" name="NBY" type="hidden" value="N" />
+<input id="LX" name="LX" type="hidden" value="B" />
+<br />
+<div class="fl_backcolor">
+    <div class="fl_yq">
+        <dl>
+            <dd>
+                院区：
+            </dd>
+            <dt height="26px"><a href="javascript:void(0)" value="" style="display: none" class="deptbg">
+                全部</a> <a href="javascript:void(0)" value="N">虹口北部</a> <a href="javascript:void(0)"
+                    value="S">松江南部</a> </dt>
+            <div class="clear">
+            </div>
+        </dl>
+    </div>
+    <div class="fl_lx">
+        <dl>
+            <dd>
+                类别：
+            </dd>
+            <dt height="26px"><a href="javascript:void(0)" value="" class="deptbg">
+                全部</a> <a href="javascript:void(0)" value="A">专家门诊</a> 
+                    <a href="javascript:void(0)" value="B">特需门诊<img  src="https://guahao.shgh.cn/yygh/Content/themes/base/images/star.png" /></a>
+                    <a href="javascript:void(0)" value="C">特需门诊<img  src="https://guahao.shgh.cn/yygh/Content/themes/base/images/star.png" /><img  src="https://guahao.shgh.cn/yygh/Content/themes/base/images/star.png" /></a> 
+                    <a href="javascript:void(0)" value="D">特需门诊<img  src="https://guahao.shgh.cn/yygh/Content/themes/base/images/star.png" /><img  src="https://guahao.shgh.cn/yygh/Content/themes/base/images/star.png" /><img  src="https://guahao.shgh.cn/yygh/Content/themes/base/images/star.png" /></a>
+                     </dt>
+            <div class="clear">
+            </div>
+        </dl>
+    </div>
+   
+</div>
+<div class="wdyyd" style="border-left: 0px; border-bottom: 0px;">
+        <table class="tableSch" id="table2" cellpadding="0" cellspacing="0" style="width:100%">
+            <thead>
+            <tr>
+                <th width="8%">
+                </th>
+                <th width="12%" colspan="2">
+                    <b>周一</b>
+                </th>
+                <th width="12%" colspan="2">
+                    <b>周二</b>
+                </th>
+                <th width="12%" colspan="2">
+                    <b>周三</b>
+                </th>
+                <th width="12%" colspan="2">
+                    <b>周四</b>
+                </th>
+                <th width="12%" colspan="2">
+                    <b>周五</b>
+                </th>
+                <th width="12%" colspan="2">
+                    <b>周六</b>
+                </th>
+            </tr>
+            <tr>
+                <th width="8%">
+                </th>
+                <th width="6%">
+                    <b>上午</b>
+                </th>
+                <th width="6%">
+                    <b>下午</b>
+                </th>
+                <th width="6%">
+                    <b>上午</b>
+                </th>
+                <th width="6%">
+                    <b>下午</b>
+                </th>
+                <th width="6%">
+                    <b>上午</b>
+                </th>
+                <th width="6%">
+                    <b>下午</b>
+                </th>
+                <th width="6%">
+                    <b>上午</b>
+                </th>
+                <th width="6%">
+                    <b>下午</b>
+                </th>
+                <th width="6%">
+                    <b>上午</b>
+                </th>
+                <th width="6%">
+                    <b>下午</b>
+                </th>
+                <th width="6%">
+                    <b>上午</b>
+                </th>
+                <th width="6%">
+                    <b>下午</b>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                        <td rowspan="2">
+                            <b>超声科</b>
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E7%99%BD%E6%95%8F&amp;hidNBY=N">白敏</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E8%8B%8F%E4%B8%80%E5%B7%BE&amp;hidNBY=N">苏一巾</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>妇科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%82%AC%E7%B4%A0%E8%8A%B3&amp;hidNBY=N">邬素芳</a>
+                            <br />
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%9D%A8%E6%B0%B8%E5%BD%AC&amp;hidNBY=N">杨永彬</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%A1%91%E9%9C%87%E5%AE%87&amp;hidNBY=N">桑震宇</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>骨科</b>
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E8%94%A1%E9%83%91%E4%B8%9C&amp;hidNBY=N">蔡郑东</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%AD%99%E4%BC%9F&amp;hidNBY=N">孙伟</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%9B%B9%E4%BA%91&amp;hidNBY=N">曹云</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="2">
+                            <b>口腔科</b>
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E8%89%BE%E5%AD%A6%E6%B0%91&amp;hidNBY=N">艾学民</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E7%8E%8B%E4%B8%96%E6%83%9F&amp;hidNBY=N">王世惟</a>
+                            <br />
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E7%8E%8B%E4%B8%96%E6%83%9F&amp;hidNBY=N">王世惟</a>
+                            <br />
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%96%B9%E7%BE%8E%E7%8F%8D&amp;hidNBY=N">方美珍</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%96%B9%E7%BE%8E%E7%8F%8D&amp;hidNBY=N">方美珍</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%92%AE%E6%99%93%E5%8B%87&amp;hidNBY=N">钮晓勇</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>泌尿科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%82%B5%E6%80%A1&amp;hidNBY=N">邵怡</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%9F%A9%E9%82%A6%E6%97%BB&amp;hidNBY=N">韩邦旻</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>皮肤科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%AD%99%E8%B6%8A&amp;hidNBY=N">孙越</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>普外肝胆胰外科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E7%8E%8B%E5%85%86%E6%96%87&amp;hidNBY=N">王兆文</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>普外甲乳血管外科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E7%8E%8B%E5%BB%BA%E4%B8%B0&amp;hidNBY=N">王建丰</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>普外胃肠外科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%99%88%E4%B8%96%E7%A6%8F&amp;hidNBY=N">陈世福</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%83%91%E6%AF%85&amp;hidNBY=N">郑毅</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>神经内科</b>
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%83%91%E8%8C%9C&amp;hidNBY=N">郑茜</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>神经外科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E8%96%9B%E4%BA%9A%E5%86%9B&amp;hidNBY=N">薛亚军</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>肾内科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%B0%9A%E6%98%8E%E8%8A%B1&amp;hidNBY=N">尚明花</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E8%A2%81%E4%BC%9F%E6%9D%B0&amp;hidNBY=N">袁伟杰</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%88%8E%E6%AE%B3&amp;hidNBY=N">戎殳</a>
+                            <br />
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%BE%90%E5%9F%B9%E6%A1%A2&amp;hidNBY=N">徐培桢</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>推拿科</b>
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%9E%97%E5%BC%BA&amp;hidNBY=N">林强</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="2">
+                            <b>消化科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%B1%AA%E4%BD%A9%E6%96%87&amp;hidNBY=N">汪佩文</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%B1%AA%E4%BD%A9%E6%96%87&amp;hidNBY=N">汪佩文</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%90%B4%E5%9D%9A%E7%82%AF&amp;hidNBY=N">吴坚炯</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>心内科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%B1%9F%E6%99%BA%E6%96%87&amp;hidNBY=N">江智文</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>心外科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E8%A2%81%E5%BF%A0%E7%A5%A5&amp;hidNBY=N">袁忠祥</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>胸外科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E6%9E%97%E4%B9%8B%E6%9E%AB&amp;hidNBY=N">林之枫</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>眼科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E4%BF%9E%E7%B4%A0%E5%8B%A4&amp;hidNBY=N">俞素勤</a>
+                            <br />
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E4%BF%9E%E7%B4%A0%E5%8B%A4&amp;hidNBY=N">俞素勤</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="1">
+                            <b>针灸科</b>
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%BC%A0%E5%BF%85%E8%90%8C&amp;hidNBY=N">张必萌</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td rowspan="2">
+                            <b>中医科</b>
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%AD%8F%E5%BC%BA%E5%8D%8E&amp;hidNBY=N">魏强华</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E9%AD%8F%E5%BC%BA%E5%8D%8E&amp;hidNBY=N">魏强华</a>
+                            <br />
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%BE%90%E5%9B%BD%E7%BC%A8&amp;hidNBY=N">徐国缨</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%91%A8%E8%90%8D&amp;hidNBY=N">周萍</a>
+                            <br />
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%91%A8%E7%BF%A0%E7%8F%8D&amp;hidNBY=N">周翠珍</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+                <tr>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>
+                            <a href="https://guahao.shgh.cn/yygh/Home/ReservationList?pageIndex=0&amp;hidType=zj&amp;keyword=%E5%BE%90%E5%9B%BD%E7%BC%A8&amp;hidNBY=N">徐国缨</a>
+                            <br />
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                        <td>&nbsp;
+                        </td>
+                 
+                </tr>
+            </tbody>
+        </table>
+</div>
+
+
+            
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#table2").freezeHeader();
+        });
+        $(function () {
+            var $nby = $(".fl_yq a");
+            $nby.click(function () {
+                $(this).addClass('deptbg').siblings().removeClass('deptbg');
+                var nby = $(this).attr("value");
+                $("#NBY").val(nby);
+
+                var url = "DoctorScheduleList?NBY=" + $("#NBY").val() + "&LX=" + $("#LX").val();
+                window.location.href = url;
+            });
+             
+            $nby.each(function () {
+                if ("N" == $(this).attr("value")) {
+                    $(this).addClass('deptbg').siblings().removeClass('deptbg');
+                }
+            });
+
+            var $lx = $(".fl_lx a");
+            $lx.click(function () {
+                $(this).addClass('deptbg').siblings().removeClass('deptbg');
+                var lx = $(this).attr("value");
+                $("#LX").val(lx);
+
+                var url = "DoctorScheduleList?NBY=" + $("#NBY").val() + "&LX=" + $("#LX").val();
+                window.location.href = url;
+            });
+            $lx.each(function () {
+                if ("B" == $(this).attr("value")) {
+                    $(this).addClass('deptbg').siblings().removeClass('deptbg');
+                }
+            });
+        });
+    </script>
+
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="copyright">
+        Copyrights 2015
+        <br />
+        上海市第一人民医院版权所有
+    </div>
+</body>
+</html>

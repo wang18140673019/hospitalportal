@@ -1,0 +1,92 @@
+
+
+/* BGN global */
+body, table, tr, td, th, select, option, input, textarea, button {
+	font-size:14px; font-family: "", Arial; color: #666;}
+ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, blockquote, table, td { margin: 0; padding: 0;}
+ul, ol { list-style-type: none; margin:0px; padding:0px;}
+a img {	border: 0;}
+form { margin: 0;	padding: 0;}
+textarea { overflow: auto;}
+.clear { height: 0;	overflow: hidden; clear: both;}
+.clearfix {	zoom: 1;}
+.clearfix:after { content: ""; display: block; clear: both; height: 0;}
+.none {	display: none;}
+.hidden { visibility: hidden;}
+.nobr {	white-space: nowrap;}
+em { white-space: nowrap;}
+table, td {	border-collapse: collapse;	padding: 0;	margin: 0;}
+a {	text-decoration: none;	outline: 0;}
+a:hover { text-decoration: underline;	outline: 0;}
+a:hover,a:active{color: #ed711a;}
+.lt { float: left; display: inline;}
+.rt { float: right; display: inline;}
+p {text-indent: 2em;	line-height: 24px;}
+p.indent {text-indent: 2em;}
+/* END global */
+/*--*/
+
+body{
+	 repeat-x;
+	margin:0 auto;
+	width:1000px;
+	}
+.pape{
+	background:url(dengl.jpg) no-repeat;
+	height:612px;
+	}
+.xinxi{
+	padding:290px 0 60px 310px;
+	}	
+.jzkh{	
+	font-size:14px;
+    }
+.wz{
+	padding-left:75px;
+	line-height:35px;
+	font-size:12px;
+	}
+.anniu{
+	padding :30px 0 0 70px;
+	}	
+.btn_st{
+	background:url(dl_an.jpg) no-repeat;
+	width:99px;
+	height:39px;
+	border:none;
+	color:#993333;
+	cursor:pointer ;
+	margin-right:30px;
+	font-size:16px;
+	}	
+.zhuyi{
+	margin-top:70px;
+	}
+.footer{
+	background:#993333;
+	}
+.nav{
+	padding:50px;
+	color:#FFF;
+	}
+.nav ul li{
+	font-size:12px;
+	float:left;
+	padding-right:42px;
+	}
+.nav ul li a{
+	color:#FFF;
+	}
+.nav ul .zuih{
+	padding-right:0px;
+	}
+.weibu{
+	font-size:12px;
+	width:1000px;
+	text-align:center;
+	line-height:20px;
+	color:#FFF;
+	}
+	
+	
+/*头部的内容*/

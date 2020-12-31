@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://www.firsthospital.cn/css/banner2015.css" type="text/css"/>
+    <script type="text/javascript" src="https://www.firsthospital.cn/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="js/jquery.SuperSlide.2.1.js"></script>
+	<SCRIPT type=text/javascript>
+if(document.location.protocol=="http:")
+{
+	top.document.location.href="https://" + document.domain + "/index.html";
+}
+</script>
+</head>
+<body>
+    <div class="focusBox2015">
+        <ul class="pic">
+                <li><img src="https://www.firsthospital.cn/images/banner20201001.jpg"/>
+                <li><img src="https://www.firsthospital.cn/images/banner20201002.jpg"/>
+                <li><img src="https://www.firsthospital.cn/images/banner20201003.jpg"/>
+                <li><img src="https://www.firsthospital.cn/images/banner20201004.jpg"/>
+                <li><img src="https://www.firsthospital.cn/images/banner20201005.jpg"/>
+                <li><img src="https://www.firsthospital.cn/images/banner20200702.jpg"/></li>
+
+                
+	</ul>
+        <a class="prev" href="javascript:void(0)"></a>
+        <a class="next" href="javascript:void(0)"></a>
+    </div>
+
+    <script type="text/javascript">
+        jQuery(".focusBox2015").hover(function(){ jQuery(this).find(".prev,.next").stop(true,true).fadeTo("show",0.2) },function(){ jQuery(this).find(".prev,.next").fadeOut() });
+        jQuery(".focusBox2015").slide({ mainCell:".pic",effect:"fold", autoPlay:true, delayTime:1800, trigger:"click"});
+    </script>
+</body>
+</html>

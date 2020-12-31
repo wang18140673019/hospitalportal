@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>上海市第一人民医院自助服务中心</title>
+    <meta http-equiv="Content-Type" content="text/plain; charset=gb2312">
+    <link href="https://guahao.shgh.cn/yygh/Content/themes/base/css/master.css" rel="stylesheet" type="text/css" />
+    <!--1.11.3-->
+    <script src="https://guahao.shgh.cn/yygh/Scripts/jquery.min.js" type="text/javascript"></script>
+     <!--1.2.1-->
+   <script src="https://guahao.shgh.cn/yygh/Scripts/jquery-migrate.min.js"></script>
+    <script src="https://guahao.shgh.cn/yygh/Scripts/base/jquery.ui.pager.1.0.js" type="text/javascript"></script>
+   <script src="https://guahao.shgh.cn/yygh/Scripts/jqueryui/jquery-ui.min.js" type="text/javascript"></script>
+    <link href="https://guahao.shgh.cn/yygh/Scripts/jqueryui/jquery-ui.min.css" rel="stylesheet"type="text/css" />
+    
+    <!--1.9-->
+    
+    <link href="https://guahao.shgh.cn/yygh/Content/themes/base/jqueryui/jquery.ui.datepicker.min.css" rel="stylesheet"type="text/css" />
+    <script src="https://guahao.shgh.cn/yygh/Scripts/Base/Beyondbit.1.0.js" type="text/javascript"></script>
+    <script src="https://guahao.shgh.cn/yygh/Scripts/jquery.unobtrusive-ajax.min.js?v=1" type="text/javascript"></script>
+    <script src="https://guahao.shgh.cn/yygh/Scripts/layer/layer.js" type="text/javascript"></script>
+
+    <style type="text/css">
+        #menubg {
+            background: url(/Content/themes/base/images/list-hover.jpg) no-repeat left top;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+        /* 遮挡层 BEGIN */
+        function ShowMask() {
+            //iframe层
+            layer.open({
+                type: 2,
+                title: '上海市第一人民医院自助服务中心',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['750px', '530px'],
+                offset: [80, ($(window).width() - 750) / 2],
+                content: '/LoginAndReg/web/UserLogin.aspx'
+            });
+        }
+
+
+        function NoticeInfo() {
+            //iframe层
+            layer.open({
+                type: 2,
+                title: '上海市第一人民医院门诊告患者书',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['750px', '580px'],
+                offset: [60, ($(window).width() - 750) / 2],
+                content: '/yygh/Home/NoticeInfo'
+            });
+        }
+
+        function HideMask() {
+            layer.closeAll();
+        }
+        /* 遮挡层 END */
+
+    </script>
+    <script type="text/javascript">
+        function openReg() {
+            ShowMask();
+        }
+        function openToReg(url) {
+            layer.open({
+                type: 2,
+                title: '上海市第一人民医院自助服务中心',
+                shadeClose: true,
+                shade: 0.7,
+                area: ['750px', '530px'],
+                offset: [80, ($(window).width() - 750) / 2],
+                content: '/LoginAndReg/web/UserLogin.aspx' + "?url=" + url
+            });
+        }
+        $(function () {
+            if ("false" == "true") {
+                openReg();
+            }
+        });
+
+            function closePage(info, vbAdmin) {
+                if (info == "登录成功") {
+                    parent.$("#spanUserInfo").html("欢迎您：&nbsp;&nbsp;<a href='Reservation.htm#' onclick='goToUrl();'>[退出]</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+
+                    parent.$(".aa").each(function () {
+                        $(this).attr("class");
+                        $(this).attr("data-ajax", false);
+                        $(this).attr("data-ajax");
+                    });
+
+                if (vbAdmin == "114admin") {
+                    parent.window.location.href = "/yygh/Home/QueryPhoneAdminList";
+                    
+                }
+                else if (vbAdmin == "114") {
+                    parent.window.location.href = "/yygh/Home/Reservation";
+                }
+                else if (("," + "13681900605,13003179125" + ",").indexOf("," + "" + ",") > -1) {
+
+                    parent.window.location.href = "/yygh/Home/Reservation";
+                }
+                else {
+                    parent.window.location.href = parent.window.location.href;
+                }
+    }
+    parent.HideMask();
+}
+
+function goToUrl() {
+    if (confirm("确定要退出么？")) {
+        window.location.href = "/yygh/Home/LoginOut";
+        }
+    }
+    </script>
+</head>
+
+    <style type="text/css">
+        .deptbg{ background:#3c93d9; color:white !important;}
+    </style>
+    
+
+<body>
+    <div class="head">
+        <div class="top_nav color">
+            <a href="http://www.firsthospital.cn/index.html">医院主页</a> | <a href="Reservation.htm">预约首页</a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main_l">
+            <div class="title_1">
+                快捷菜单
+            </div>
+            <div class="menu">
+                <ul>
+                        <li><a href="https://guahao.shgh.cn/yygh/">操作攻略</a></li>
+                        <li><a href="Reservation.htm">预约挂号</a></li>
+                        <li><a href="https://guahao.shgh.cn/yygh/Home/DoctorScheduleList?NBY=N">专家排班</a></li>
+                        <li><a href="https://guahao.shgh.cn/yygh/Home/ForeignExpertQuery">外籍专家</a></li>
+                             <li><a data-ajax="true" class="aa" onclick="openReg()">我的预约单</a></li>
+                            <li><a data-ajax="true" class="aa" onclick="openReg()">历史预约单</a></li>
+                            <li><a data-ajax="true" class="aa" onclick="openReg()">我的专家</a></li>
+                           <li><a data-ajax="true" class="aa" onclick="openReg()">我的报告</a></li>
+                           <li><a data-ajax="true" class="aa" onclick="openReg()">个人中心</a></li>
+                    
+                </ul>
+            </div>
+            <div class="title_1">
+                常见问题
+            </div>
+            <div class="text">
+                <marquee style="height: 200px" direction="up" onmouseout="this.start()" onmouseover="this.stop()"
+                    scrollamount="2">
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=6">+[问]：外籍专家预约说明</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=6">
+                                  -(答)： 本项目为国际远程会诊，通过我院的远程医疗会诊系统，由中方专家结合患者及家属的意见要求，征询国际专家的...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=4">+[问]：预约挂号需要收费吗</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=4">
+                                  -(答)： 上海第一人民医院网上预约服务是面向全国患者提供的公益、免费预约挂号服务；市民通过预约网站不需要支付预...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=3">+[问]：预约挂号需要注册吗</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=3">
+                                  -(答)： 通过预约网站或预约电话首次预约时，必须提供有效上海市社保卡号或医联卡号；有效身份证、护照或军官证等证...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=2">+[问]：预约挂号指南</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=2">
+                                  -(答)： 网站左上方快捷菜单点击“注册”按钮   根据提示文字的信息，在注册用户界面中填写信息，待填写完全正确...</a></span><br />
+                        <span><br /></span>
+                        <span class="color1"><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=1">+[问]：预约挂号须知</a></span><br />
+                        <span><a href="https://guahao.shgh.cn/yygh/Home/FAQ?id=1">
+                                  -(答)：  一、预约适用对象：面向全国所有患者，预约不收取任何费用。  二、患者类别：  1.    初诊患者...</a></span><br />
+                        <span><br /></span>
+                </marquee>
+            </div>
+        </div>
+        <div class="main_r">
+            <div class="title_2">
+                <div style="float: left">当前位置 &gt; 预约挂号</div>
+                <span id="spanUserInfo">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+            </div>
+            
+ <form id="form" method="post" action="https://guahao.shgh.cn/yygh/Home/ReservationList">
+<input id="hidNBY" name="hidNBY" type="hidden" value="NS" />
+ 
+<div class="lc_1">
+ <span class="f_b">选择院区</span><span>选择科室时间</span><span>确认预约</span>
+</div>
+    
+    <table style="width:80%;height:310px" align="center" class="fl_list2">
+        <tr>
+            <td width="33%" align="center"><a href="javascript:void(0)" value="N">
+                <img  src="https://guahao.shgh.cn/yygh/Content/themes/base/images/NorthSelect.png" /></a></td>
+            <td width="33%"  align="center"><a href="javascript:void(0)" value="S">
+                <img src="https://guahao.shgh.cn/yygh/Content/themes/base/images/SouthSelect.png"   /></a></td>
+            <td width="33%"  align="center"><a href='https://guahao.shgh.cn/yygh/Home/ForeignExpertQuery' value="W">
+                <img src="https://guahao.shgh.cn/yygh/Content/themes/base/images/ForeignSelect.png"   /></a></td>
+        </tr>
+    </table>
+
+  
+   
+ 
+
+</form>
+
+
+
+            
+ 
+<script type="text/javascript">
+
+    $(function () {
+        //科室
+        var $dept = $('.fl_list2 a');
+        $dept.click(function () {
+            $(this).addClass('deptbg').siblings().removeClass('deptbg');
+            var dept = $(this).attr("value");
+            $("#hidNBY").val(dept);
+            $("#form").submit();
+        })
+    })
+
+    $(function () {
+        if ("true" == "true") {
+            NoticeInfo();
+        }
+    });
+</script>
+    
+
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="copyright">
+        Copyrights 2015
+        <br />
+        上海市第一人民医院版权所有
+    </div>
+</body>
+</html>
