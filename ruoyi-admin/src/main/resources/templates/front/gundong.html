@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META content="0" name="CustomerID">
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title></title>
+<link href="/front/images/gundong.css" type="text/css" rel="stylesheet" />
+<script language="javascript" src="js/jquery171.js"></script>
+<style type="text/css">
+<!--
+.text li{display:none;}
+.text li.on{display:block;}
+-->
+</style>
+</head>
+
+<body>
+<div class="focus_box" id="focus_box">
+ <div class="focus">
+  <div class="bg1">
+   <p class="title"><span class="greyb18 text1"><b><script src="/Execute/Module/29/0" type="text/javascript" Charset="unicode"></script></b></span></p>
+  </div>
+	<div class="text">
+	<script src="/Execute/Module/74/0" type="text/javascript" Charset="unicode"></script>
+	</div>
+   <script src="/Execute/Module/75/0" type="text/javascript" Charset="unicode"></script>
+  <a hideFocus="true" style="Z-INDEX: 9999; DISPLAY: block" id=bt_prew class="prev" onclick="focus_prev();"></a>
+  <a hideFocus="true" style="Z-INDEX: 9999; DISPLAY: block" id=bt_next class="next" onclick="focus_next();"></a>
+ </div>
+</div>
+<SCRIPT type=text/javascript>
+var next = 2;
+jQuery("#focus_box").hover(
+function () {
+    jQuery("#bt_prew").show();
+    jQuery("#bt_next").show();
+	clearInterval(isround);
+},
+function () {
+    jQuery("#bt_prew").hide();
+    jQuery("#bt_next").hide();
+	isround = setTimeout("change("+next+")",5000);
+    }
+);
+ jQuery("#bt_prew").hide();
+    jQuery("#bt_next").hide();
+</SCRIPT>
+  <script>
+var isround = "";
+var scrollmove = "";
+var masktime = 10;
+var focus_cur = 1;
+var p = document.getElementById("pic").getElementsByTagName("li");
+var h = document.getElementById("tip").getElementsByTagName("li");
+function change(id){
+	clearTimeout(isround);
+	clearInterval(scrollmove);
+	for (var i = 1; i <= h.length; i++) {
+		if(i == id){
+			document.getElementById("smallimg_"+i).className="current";
+			document.getElementById("title_"+i).className="on";
+		}else{
+			document.getElementById("smallimg_"+i).className="";
+			document.getElementById("title_"+i).className="";
+		}
+	}
+	if ((next = id + 1) > h.length){
+		next = 1;
+	}
+	isround = setTimeout("change("+next+")",9000);
+	scrollmove = setInterval("scrollMove("+id+")",masktime);
+	focus_cur = id;
+}
+function change1(id){
+	clearTimeout(isround);
+	clearInterval(scrollmove);
+	for (var i = 1; i <= h.length; i++) {
+		if(i == id){
+			document.getElementById("smallimg_"+i).className="current";
+			document.getElementById("title_"+i).className="on";
+		}else{
+			document.getElementById("smallimg_"+i).className="";
+			document.getElementById("title_"+i).className="";
+		}
+	}
+	if ((next = id + 1) > h.length){
+		next = 1;
+	}
+	//isround = setTimeout("change("+next+")",3000);
+	scrollmove = setInterval("scrollMove("+id+")",masktime);
+	focus_cur = id;
+}
+function scrollMove(m){
+	var srl = document.getElementById("pic").scrollLeft;
+	var dsrl = Math.floor((p[0].clientWidth*(m-1)-srl)/6);
+	var xsrl = Math.ceil((p[0].clientWidth*(m-1)-srl)/6);
+	if(srl > p[0].clientWidth*(m-1)){
+		document.getElementById("pic").scrollLeft = srl + dsrl;
+	}else if(srl < p[0].clientWidth*(m-1)){
+		document.getElementById("pic").scrollLeft = srl + xsrl;
+	}else{
+		clearInterval(scrollmove);
+	}
+}
+function focus_prev(){
+	var prev = (focus_cur+2)%3;
+	if(prev == "0"){
+		prev =3;
+	}
+	change1(prev);
+}
+function focus_next(){
+	var next = (focus_cur+1)%3;
+	if(next == "0"){
+		next =3;
+	}
+    change1(next);
+}
+change(1);
+isround = setTimeout("change(2)",5000);
+</script>
+</body>
+</html>

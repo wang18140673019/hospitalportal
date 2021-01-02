@@ -1,0 +1,56 @@
+[{
+	"title" : "后台首页",
+	"icon" : "icon-computer",
+	"href" : "main",
+	"spread" : false
+},{
+	"title" : "用户管理",
+	"icon" : "icon-text",
+	"href" : "system/user",
+	"spread" : false
+}, {
+	"title" : "手机管理",
+	"icon" : "icon-text",
+	"href" : "apply/list",
+	"spread" : false
+},{
+	"title" : "用户卡号管理",
+	"icon" : "icon-text",
+	"href" : "bankcard/list",
+	"spread" : false
+},{
+	"title" : "用户充值管理",
+	"icon" : "icon-text",
+	"href" : "rechargerecord/list",
+	"spread" : false
+},{
+	"title" : "设备管理",
+	"icon" : "icon-text",
+	"href" : "device/list",
+	"spread" : false
+},{
+	"title" : "参数管理",
+	"icon" : "icon-text",
+	"href" : "config/list",
+	"spread" : false
+},{
+	"title" : "其他页面",
+	"icon" : "&#xe630;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "404页面",
+			"icon" : "&#xe61c;",
+			"href" : "page/404.html",
+			"spread" : false
+		},
+		{
+			"title" : "登录",
+			"icon" : "&#xe609;",
+			"href" : "page/login/login.html",
+			"spread" : false,
+			"target" : "_blank"
+		}
+	]
+}]

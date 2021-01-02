@@ -1,0 +1,177 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0; border:0;}
+img{ display:block;}
+a{ text-decoration:none;}
+ul{ list-style:none;}
+.clear{clear: both;}
+body{ background:#fbf7ec;}
+
+.wrap{ width: 1000px;  margin: 0 auto; background: #fff;}
+.main1{ float: left;}
+.main2{ float: left; margin-left: 10px;}
+.focus{ width: 720px; height: 340px; float: left;}
+.content1:after{ content: "."; display: block; height: 0; visibility: hidden; clear: both;}
+.content1{*zoom:1;}
+
+
+/*tab*/
+.tab{ float: left;}
+.slideTxtBox{ width:479px; height:195px; text-align:left;}
+.slideTxtBox .hd{ height:39px; line-height:39px; }
+.slideTxtBox .hd ul{ float:left; height:39px;   }
+.slideTxtBox .hd ul li{ float:left; width: 157px; height: 39px;  margin-right: 4px; cursor:pointer; font-size: 14px; text-align: center; color: #923225; background:url(/front/images/tabbg.jpg); }
+.slideTxtBox .hd ul .mr0{ margin-right: 0px;}
+.slideTxtBox .hd ul li.on{ color: #fff; background: url(/front/images/tabon.jpg);}
+index.html
+.slideTxtBox .bd ul{  zoom:1; padding-top: 5px; }
+.slideTxtBox .bd li{ height:30px; line-height:30px; background: url(/front/images/dian.jpg) left no-repeat; text-indent: 22px; width: 472px; overflow: hidden;}
+.slideTxtBox .bd li a{ font-size: 14px; color: #666;}
+.slideTxtBox .bd li .date{ float:right; color:#666;  }
+
+/*媒体关注*/
+.mtgz{ width: 225px; height: 195px; float: left; margin-left: 16px;}
+.mtgz_title{ width: 225px; height: 37px; border-top: 2px solid #923224; background: #f4eae9; }
+.mtgz_title span{ height: 37px; line-height: 37px; font-size: 14px; color: #923225; float: left; margin-left: 15px; }
+.mtgz_title a{ height: 37px; line-height: 37px; font-size: 12px; color: #923225;  margin-right: 15px;}
+.fr{ float: right;}
+.mtgz_title  ul{  zoom:1; padding-top: 5px; }
+.mtgz_title ul li{ height:30px; line-height:30px; background: url(/front/images/dian.jpg) left no-repeat; text-indent: 22px;  width: 225px; overflow: hidden;}
+.mtgz_title ul li a{ font-size: 14px; color: #666; text-align: left;}
+
+
+/*就医导航*/
+.jydh{ width: 270px; height: 340px;}
+.jydh_title{ width: 270px; height: 37px; border-top: 2px solid #923224; background: #f4eae9; }
+.jydh_title span{ height: 37px; line-height: 37px; font-size: 14px; color: #923225; float: left; margin-left: 15px; }
+.jydh_title a{ height: 37px; line-height: 37px; font-size: 12px; color: #923225;  margin-right: 15px;}
+
+
+
+/*健康学院*/
+.jkxy{ width: 270px; height: 190px; margin-top: 10px;  }
+.jkxy_title{ width: 270px; height: 37px; border-top: 2px solid #923224; background: #f4eae9; }
+.jkxy_title span{ height: 37px; line-height: 37px; font-size: 14px; color: #923225; float: left; margin-left: 15px; }
+.jkxy_title a{ height: 37px; line-height: 37px; font-size: 12px; color: #923225;  margin-right: 15px;}
+
+.jkxy_title  ul{  zoom:1; padding-top: 5px; }
+.jkxy_title ul li{ height:30px; line-height:30px; background: url(/front/images/dian.jpg) left no-repeat; text-indent: 22px; width: 270px; overflow: hidden;}
+.jkxy_title ul li a{ font-size: 14px; color: #666; text-align: left;}
+
+
+/*关注我们*/
+.gzwm{ width: 270px; margin-top: 10px;  }
+.gzwm_title{ width: 270px; height: 37px; border-top: 2px solid #923224; background: #f4eae9; }
+.gzwm_title span{ height: 37px; line-height: 37px; font-size: 14px; color: #923225; float: left; margin-left: 15px; }
+.gzwm_title a{ height: 37px; line-height: 37px; font-size: 12px; color: #923225;  margin-right: 15px;}
+
+/*        index END        */
+
+
+
+/*多媒体*/
+.media-top{ width: 1000px; height: 23px; background: #923224;}
+.media-nav{ width: 1000px; height: 40px; background: #923224; margin-bottom: 7px; }
+.media-nav ul li{ float: left; width: 111px; text-align: center;}
+.media-nav ul li a{font-size: 14px; line-height: 40px; color: #fff; }
+.media-main:after{ content: "."; display: block; height: 0; visibility: hidden; clear: both;}
+.media-main{ *zoom:1; margin-top: 8px; }
+.media-left{ float: left; width: 671px; margin-left: 9px; }
+.media-left1{ width: 669px; height: 31px; line-height:31px; border: 1px solid #ccc; font-size: 14px; color: #333; text-indent: 37px; background: url(/front/images/media-left01.jpg) #f1f1f1 no-repeat;}
+.media-left1 a{color: #333;}
+.media-left2{ width: 669px; height: 47px; margin-top: 15px; border-bottom: 1px solid #923224; }
+.media-left2 img,.media-left2 a{ float: left;}
+.media-left21{ margin-left: 470px; line-height: 60px; color: #333; font-size: 12px;}
+.media-left3{ width: 633px; margin-left: 38px; overflow: hidden;}
+.media-left3 li{ height: 31px; width: 633px; font-size: 14px; }
+.media-left3 li a{ display: block; width: 480px; height: 31px; line-height: 31px; float: left; overflow: hidden; color: #666; }
+.media-left3 li a:hover{ color: #f60;}
+.media-left3 li span{ display: block; float: left; width: 95px;  height: 31px; line-height: 31px;  margin-left: 55px; }
+
+
+
+.media-right{ float: left; width: 277px;  margin-left: 32px; _*margin-left: 17px;}
+.media-right1{ width:275px; height: 316px; background: url(/front/images/media-right1.jpg) repeat-x; border: 1px solid #ccc;}
+.media-right1 ul{ width: 242px; margin: 0 auto;}
+.media-right1 ul li{ border-bottom: 1px dashed #666;}
+.media-right1 ul li a{ font-size: 14px; color: #666; line-height: 31px;}
+.media-right1 ul .NoBorder{ border:0;}
+.media-right1-more{ margin-left: 166px;}
+.media-right2{ width:275px; border: 1px solid #ccc; margin-top: 21px;}
+.media-right21{ width: 275px; height: 21px; line-height: 21px; margin-top: 17px; margin-left: 17px; }
+.media-right21 span{width: 21px; height: 21px; display: block; float: left; background: #923224; color: #fff; text-align: center; }
+.media-right21 a{ display: block; float: left; width: 254px; height: 21px; line-height: 21px; color: #333; font-size: 14px;}
+.media-right22{ width: 238px; height: 152px; margin: 0 auto; margin-top: 5px;}
+.media-right2-more{ margin-top: 14px; margin-left: 166px;}
+.media-foot{ width: 1000px; height: 28px; margin-top: 25px; background: #923224; line-height: 28px; color: #fff; font-size: 14px; text-align: center;}
+
+
+
+
+/*健康学院*/
+.health-top2:after{ content: "."; display: block; height: 0; visibility: hidden; clear: both;}
+.health-top2{ *zoom:1; width: 1000px; height: 119px; }
+.health-top21{ width: 760px; height: 119px; float: left; }
+.health-top22{ width: 225px; margin-top: 38px; float: left;}
+.health-top22 ul li{ background: url(/front/images/health-top221.jpg) no-repeat left; text-indent: 12px; float: left; margin-right: 13px;}
+.health-top22 ul li a{  font-size: 12px; color: #333; }
+.health-search{ padding-top: 30px; *padding-top: 13px;}
+.health-search1{ width: 188px; height: 26px; *line-height: 26px; border: 1px solid #acadb2; float: left; }
+.health-search2{ float: left;}
+.health-nav{ width: 1000px; height: 45px; background: #923224; }
+.health-nav ul { width: 1000px; _*width:974px; height: 45px; _*height: 35px; padding-top: 10px; padding-left: 26px; }
+.health-nav ul li{ float: left; width: 93px; height: 26px; text-align: center; border-right: 1px solid #999967; }
+.health-nav ul li a{ color: #fff; font-size: 14px; line-height: 26px;  }
+.health-main{ margin-top: 27px; *zoom:1;}
+.health-main:after{ content: "."; display: block; height: 0; visibility: hidden; clear:both;}
+.health-left{ float: left; width: 284px; }
+.health-left1 img{ border: 2px solid #bebebe; margin-bottom: 8px; }
+.health-left2{ width: 280px; height: 342px; border: 1px solid #ccc; margin-top: 10px; background: url(/front/images/health-left2BG.jpg) repeat-x ;}
+.health-left21:after{ content: "."; display: block; height: 0; visibility: hidden; clear:both;}
+.health-left21{ *zoom:1;}
+.health-left21 img,.health-left21 a{ float: left;}
+.health-left21 a{ font-size: 14px; color: #343434; line-height: 55px; margin-left: 62px;  }
+.health-left2 ul{ width: 232px; margin: 0 auto;}
+.health-left2 ul li{ height: 30px; width: 232px; border-bottom: 1px dashed #ccc;;}
+.health-left2 ul li a{ font-size: 14px; line-height: 30px; color: #666;} 
+.health-left3{ width: 280px; height: 284px; border: 1px solid #ccc; float: left; margin-top: 11px;}
+.health-left31{ width: 280px; height: 34px; background: url(/front/images/health-right1.jpg);}
+.health-left31 span,.health-right11 a{ display: block; float: left;}
+.health-left31 span{ width: 101px; height: 34px; text-align: center; font-size: 14px; color: #fff; font-weight: bold; line-height: 34px;}
+.health-left31 a{line-height: 34px; color: #343434; margin-left: 127px; font-size: 14px;}
+.health-left3 ul{margin-left: 14px; margin-top: 9px;  }
+.health-left3 ul li { width: 248px; height: 30px; overflow: hidden;}
+.health-left3 ul li a{ line-height: 30px; color: #656565; font-size: 14px;}
+
+
+.health-right{ float: left; width: 709px; margin-left: 7px;  }
+.health-right1{ width: 494px; height: 284px; border: 1px solid #ccc; float: left; margin-right: 10px; _*margin-right: 9px; margin-bottom: 11px;}
+.health-right11{ width: 494px;  height: 34px; background: url(/front/images/health-right1.jpg) no-repeat;}
+.health-right11 span,.health-right11 a{ display: block; float: left;}
+.health-right11 span{ width: 101px; height: 34px; text-align: center; font-size: 14px; color: #fff; font-weight: bold; line-height: 34px;}
+.health-right11 a{line-height: 34px; color: #343434; margin-left: 335px; font-size: 14px;}
+.health-right1 ul{margin-left: 14px; margin-top: 9px;  }
+.health-right1 ul li { width: 455px; height: 30px; overflow: hidden;}
+.health-right1 ul li a{ line-height: 30px; color: #656565; font-size: 14px;}
+.health-right2{ margin-right: -10px;}
+
+.health-foot{ margin-top: 9px; *margin-top: 20px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
