@@ -19,7 +19,7 @@ function switchcont(s)
 			//document.getElementById("nr"+i).className="";
 
 			}
-			//document.getElementById(tag).src="../images/minus.gif";
+			//document.getElementById(tag).src="/front/images/minus.gif";
 
 		}else{
 			document.getElementById("submeau"+i).className="hidecontent";
@@ -67,7 +67,7 @@ function showMenuStyle(s)
 //document.getElementById(s).className="";
 				document.getElementById("hot"+i).className="content_w";
 			    document.getElementById("menusty"+i).className="on";
-			//document.getElementById(tag).src="../images/minus.gif";
+			//document.getElementById(tag).src="/front/images/minus.gif";
 
 		}else{
 			document.getElementById("hot"+i).className="hidecontent";

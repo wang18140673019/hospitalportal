@@ -35,4 +35,10 @@ public class FrontHomeController extends BaseController
     }
 
 
+    @GetMapping("hospital/index")
+    public String hospitalindex()
+    {
+        return prefix + "/hospital/index";
+    }
+
 }
