@@ -524,7 +524,7 @@ layui.define(['layer', 'jquery', 'admin', 'form', 'laydate', 'table'], function 
          * data: [],//数据集合
          * valueKey:"id",//值的key
          * nameKey:"name",//名称的key
-         * emptyText:"请选择"//第一个选项提示
+         * emptyText:"请选择"//"/front/hospital/个选项提示
          * }
          */
         selectFromList: function (options) {

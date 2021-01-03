@@ -90,7 +90,7 @@ var table = {
                     sortOrder: options.sortOrder,                       // 排序方式  asc 或者 desc
                     pagination: options.pagination,                     // 是否显示分页（*）
                     paginationLoop: options.paginationLoop,             // 是否启用分页条无限循环的功能
-                    pageNumber: 1,                                      // 初始化加载第一页，默认第一页
+                    pageNumber: 1,                                      // 初始化加载"/front/hospital/页，默认"/front/hospital/页
                     pageSize: options.pageSize,                         // 每页的记录行数（*） 
                     pageList: options.pageList,                         // 可供选择的每页的行数（*）
                     firstLoad: options.firstLoad,                       // 是否首次请求加载数据，对于数据较大可以配置false
@@ -340,7 +340,7 @@ var table = {
                     return $.common.nullToStr(value);
                 }
             },
-            // 搜索-默认第一个form
+            // 搜索-默认"/front/hospital/个form
             search: function(formId, tableId) {
                 table.set(tableId);
                 table.options.formId = $.common.isEmpty(formId) ? $('form').attr('id') : formId;
@@ -580,7 +580,7 @@ var table = {
                     showRefresh: options.showRefresh,                   // 是否显示刷新按钮
                     showColumns: options.showColumns,                   // 是否显示隐藏某列下拉框
                     expandAll: options.expandAll,                       // 是否全部展开
-                    expandFirst: options.expandFirst,                   // 是否默认第一级展开--expandAll为false时生效
+                    expandFirst: options.expandFirst,                   // 是否默认"/front/hospital/级展开--expandAll为false时生效
                     columns: options.columns,                           // 显示列信息（*）
                     responseHandler: $.treeTable.responseHandler,       // 在加载服务器发送来的数据之前处理函数
                     onLoadSuccess: $.table.onLoadSuccess                // 当所有数据被加载时触发处理函数

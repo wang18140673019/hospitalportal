@@ -372,7 +372,7 @@
                 }
 
                 html.push('<th>', (options.effectiveFieldsAlias[field] || field),
-                    index === 0 ? ('(' + len + ')') : '' , // 表头第一列记录总数
+                    index === 0 ? ('(' + len + ')') : '' , // 表头"/front/hospital/列记录总数
                     '</th>');
 
                 index++;
@@ -647,7 +647,7 @@
         /* 搜索相关 */
         autoSelect: TRUE,               // 键盘向上/下方向键时，是否自动选择值
         allowNoKeyword: TRUE,           // 是否允许无关键字时请求数据
-        getDataMethod: 'firstByUrl',    // 获取数据的方式，url：一直从url请求；data：从 options.data 获取；firstByUrl：第一次从Url获取全部数据，之后从options.data获取
+        getDataMethod: 'firstByUrl',    // 获取数据的方式，url：一直从url请求；data：从 options.data 获取；firstByUrl："/front/hospital/次从Url获取全部数据，之后从options.data获取
         delayUntilKeyup: FALSE,         // 获取数据的方式 为 firstByUrl 时，是否延迟到有输入时才请求数据
         ignorecase: FALSE,              // 前端搜索匹配时，是否忽略大小写
         effectiveFields: [],            // 有效显示于列表中的字段，非有效字段都会过滤，默认全部有效。
@@ -786,7 +786,7 @@
 
                     if (event.keyCode === options.keyDown) { // 如果按的是向下方向键
                         if (!currentList.length) {
-                            // 如果提示列表没有一个被选中,则将列表第一个选中
+                            // 如果提示列表没有一个被选中,则将列表"/front/hospital/个选中
                             tipsKeyword = getPointKeyword($dropdownMenu.find('tbody tr:first').mouseover());
                         } else if (!currentList.next().length) {
                             // 如果是最后一个被选中,则取消选中,即可认为是输入框被选中，并恢复输入的值
@@ -1032,7 +1032,7 @@
                 return this;
             }
 
-            // 如果是方法，则参数第一个为函数名，从第二个开始为函数参数
+            // 如果是方法，则参数"/front/hospital/个为函数名，从第二个开始为函数参数
             return methods[options].apply(this, [].slice.call(arguments, 1));
         } else {
             // 调用初始化方法

@@ -1,0 +1,138 @@
+@charset "utf-8";
+/* END global */
+/*--*/
+.consub_r{
+	padding-left:22px;
+	background:url(yuanq.jpg) 2px 15px no-repeat;
+	font-family:microsoft yahei !important;
+	color:#923225;
+	font-size:16px;
+	height:40px;
+	line-height:40px;
+	margin:0 20px 10px 20px;
+	border-bottom:#999 1px solid;
+	}
+.consub_r h2{
+	float:left;
+	font-size:16px;
+	}
+.t_more{
+	float:right;
+	}
+.ovw_con{
+	margin-bottom:30px;
+	}
+.com_pic{
+	margin-bottom:30px;
+	}
+.com_pic img {
+    margin-bottom: 0px;
+    }	
+	
+/*领导*/
+.com_pic ul li{
+	float:left;
+	display:line;
+	}
+.pic_ld{
+	width:170px;
+	padding:10px 18px 18px 30px !important;
+	padding:10px 0px 0px 30px ;
+	display:line;
+	}
+.ld_t{
+	margin-bottom:10px;
+	}
+.sb_t, .ld_t img{
+	border: #CCC 1px solid;
+	padding:5px;
+	}	
+.ld_zi{
+	background:url(zi_b.jpg) no-repeat;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	}	
+	
+
+.page{font-size:14px; margin :10px 0 30px 35px;;}
+.page a{color:#990000;}
+a.w:link,a.w:visited{color: #000;}
+a.w:hover,a.w:active{color: #fff;}	
+
+.name{
+	margin-left:20px;
+	}
+.com_pic h2{
+	font-family:microsoft yahei !important;
+    font-size:16px;
+	height:30px;
+	line-height:30px;
+	}	
+	
+/*荣誉*/
+.content_r{
+	width:640px;
+	margin:0px 0px 30px 20px;
+	}
+.content_r li{
+	background:url(fang_x.jpg) 2px 13px no-repeat;
+	padding-left:20px;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+	}	
+.content_r li a{
+	float:left;
+	width:530px;
+	display:block;
+	}		
+
+.content_r_detail_title{ font-family:microsoft yahei !important; font-size:18px; text-align:center; font-weight:bold; border-bottom:1px solid #C79780; line-height:35px; }
+	.content_r_detail_time{float:right; padding-right:80px; font-size:14px; line-height:45px;}
+	.content_r_detai_con{background:url(t_1.jpg) no-repeat top; width:871px; margin:0 auto;}
+	.content_r_detail_text{	font-size:14px; border-bottom:1px solid #ccc;
+	padding:20px;
+	text-indent: 25px;
+
+}	
+.eq_s{
+	margin-left:20px;
+	}
+.content_r_xt{
+	margin-bottom:20px;
+	}	
+.line{
+	margin:10px 30px 10px 0px;
+	border-bottom:#CCC 1px solid;
+	}	
+.sb_t{
+	float:left;
+	width:250px;
+	}
+.sb_zi{
+	width:375px;
+	float:right;
+	padding:0px 15px;
+	}
+.sb_zi p{
+	font-size:14px;
+	}
+.sb_zi h2{
+    font-family:microsoft yahei !important;
+    font-size:16px;
+}
+
+
+.equ_detail_title{ font-family:microsoft yahei !important; font-size:18px; text-align:center; font-weight:bold; border-bottom:1px solid #C79780; line-height:35px; }
+	.equ_detail_time{float:right; padding-right:80px; font-size:14px; line-height:45px;}
+	.equ_detai_con{background:url(t_1.jpg) no-repeat top; width:871px; margin:0 auto;}
+	.equ_detail_text{	font-size:14px; border-bottom:1px solid #ccc;
+	padding:20px;
+	text-indent: 25px;}
+	
+	.detail_img{margin:0 0 15px 0; text-align:center;}
+	
+	
+	
+	.pre_c{margin-top:0px;}

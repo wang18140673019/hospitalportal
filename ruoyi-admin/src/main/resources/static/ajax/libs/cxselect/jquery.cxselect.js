@@ -389,8 +389,8 @@
     data: null,             // 自定义数据
     emptyStyle: null,       // 无数据状态显示方式
     required: false,        // 是否为必选
-    firstTitle: '请选择',    // 第一个选项的标题
-    firstValue: '',         // 第一个选项的值
+    firstTitle: '请选择',    // "/front/hospital/个选项的标题
+    firstValue: '',         // "/front/hospital/个选项的值
     jsonSpace: '',          // 数据命名空间
     jsonName: 'n',          // 数据标题字段名称
     jsonValue: '',          // 数据值字段名称
