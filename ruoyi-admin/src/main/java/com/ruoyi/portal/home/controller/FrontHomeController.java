@@ -70,4 +70,19 @@ public class FrontHomeController extends BaseController
     }
 
 
+    @GetMapping("List/News/14")
+    public String ListNews14()
+    {
+        return prefix + "/List/News/14";
+    }
+
+
+    @GetMapping("news/news")
+    public String news()
+    {
+        return prefix + "/news/news";
+    }
+
+
+
 }
