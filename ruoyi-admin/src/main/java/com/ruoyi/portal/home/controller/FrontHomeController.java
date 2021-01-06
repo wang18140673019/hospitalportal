@@ -77,11 +77,7 @@ public class FrontHomeController extends BaseController
     }
 
 
-    @GetMapping("news/news")
-    public String news()
-    {
-        return prefix + "/news/news";
-    }
+
 
     @GetMapping("party/party")
     public String dangindex()
@@ -116,6 +112,14 @@ public class FrontHomeController extends BaseController
     }
 
 
+    // 公告纪要
+    @GetMapping("party/gonggaojiyao/{id}")
+    public String gonggaojiyao(@PathVariable String id)
+    {
+        return prefix + "/party/gonggaojiyaodetail";
+    }
+
+
     // 党员在线学习
     @GetMapping("party/dangyuanzaixianxuexi")
     public String dangyuanzaixianxuexi()
@@ -123,11 +127,32 @@ public class FrontHomeController extends BaseController
         return prefix + "/party/dangyuanzaixianxuexi";
     }
 
+
+    // 党员在线学习
+    @GetMapping("party/dangyuanzaixianxuexi/{id}")
+    public String dangyuanzaixianxuexidetail(@PathVariable String id)
+    {
+        return prefix + "/party/dangyuanzaixianxuexidetail";
+    }
+
     // 党建实务
     @GetMapping("party/dangjianshiwu")
     public String dangjianshiwu()
     {
         return prefix + "/party/dangjianshiwu";
+    }
+
+    // 党建实务
+    @GetMapping("party/dangjianshiwu/{id}")
+    public String dangjianshiwu(@PathVariable String id)
+    {
+        return prefix + "/party/dangjianshiwudetail";
+    }
+    // 院志工作动态
+    @GetMapping("party/yuanzhi/{id}")
+    public String yuanzhidetail()
+    {
+        return prefix + "/party/yuanzhidetail";
     }
     // 院志工作动态
     @GetMapping("party/yuanzhi")
@@ -142,7 +167,24 @@ public class FrontHomeController extends BaseController
         return prefix + "/party/zhubugongzuodetail";
     }
 
+    // 医院新闻详情
+    @GetMapping("news/{id}")
+    public String newsdetail(@PathVariable String id)
+    {
+        return prefix + "/news/newsdetail";
+    }
 
-
+// 医院新闻
+    @GetMapping("news/news")
+    public String news()
+    {
+        return prefix + "/news/news";
+    }
+    // 挂号
+    @GetMapping("guahao/index")
+    public String guohaoindex()
+    {
+        return prefix + "/guahao/index";
+    }
 
 }
