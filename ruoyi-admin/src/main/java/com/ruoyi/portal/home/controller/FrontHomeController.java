@@ -4,9 +4,9 @@ package com.ruoyi.portal.home.controller;
 
 
 import com.ruoyi.common.core.controller.BaseController;
-import com.sun.org.apache.xml.internal.resolver.Catalog;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -82,6 +82,66 @@ public class FrontHomeController extends BaseController
     {
         return prefix + "/news/news";
     }
+
+    @GetMapping("party/party")
+    public String dangindex()
+    {
+        return prefix + "/party/party";
+    }
+
+    @GetMapping("party/p")
+    public String dangp()
+    {
+        return prefix + "/party/p";
+    }
+    @GetMapping("party/pic")
+    public String dangpic()
+    {
+        return prefix + "/party/pic";
+    }
+
+// 支部工作
+    @GetMapping("party/zhubugongzuo")
+    public String zhubugongzuo()
+    {
+        return prefix + "/party/zhubugongzuo";
+    }
+
+
+    // 公告纪要
+    @GetMapping("party/gonggaojiyao")
+    public String gonggaojiyao()
+    {
+        return prefix + "/party/gonggaojiyao";
+    }
+
+
+    // 党员在线学习
+    @GetMapping("party/dangyuanzaixianxuexi")
+    public String dangyuanzaixianxuexi()
+    {
+        return prefix + "/party/dangyuanzaixianxuexi";
+    }
+
+    // 党建实务
+    @GetMapping("party/dangjianshiwu")
+    public String dangjianshiwu()
+    {
+        return prefix + "/party/dangjianshiwu";
+    }
+    // 院志工作动态
+    @GetMapping("party/yuanzhi")
+    public String yuanzhi()
+    {
+        return prefix + "/party/yuanzhi";
+    }
+
+    @GetMapping("party/{id}")
+    public String partydetail(@PathVariable String id)
+    {
+        return prefix + "/party/zhubugongzuodetail";
+    }
+
 
 
 

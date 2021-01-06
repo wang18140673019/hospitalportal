@@ -1,0 +1,160 @@
+﻿@charset "utf-8";
+/* END global */
+/*--*/
+.top{
+	margin-bottom:20px;
+	}
+.menu{
+	background:url(/front/images/dn_bg.jpg) repeat-x;
+	height:52px;
+	}
+.menu ul li{
+	text-align:center;
+	float:left;
+	line-height:52px;
+	background:none;
+	width:12.5%;
+	}
+.menu ul li a{
+	font-family:microsoft yahei !important;
+	font-size:18px;
+	color: #FFF;
+	}	
+.menu li ul {z-index:1000; visibility:hidden; position:absolute;}
+.menu li.hover ul {/*ie6不支持li:hover所以在这里写成li.hover以方便js取样式*/visibility:visible; position:absolute; display:block; width:110px;color:#002a56;margin-left:0;margin-left:0/9;*margin-left:-50px; height:120px; background:#FFC; }
+.menu ul ul li{ line-height:25px;width:62px; color:#002a56;font-size:12px;font-weight:normal; padding-top:2px;background:none; padding-left:15px; }
+.menu ul ul li a:link{ line-height:25px;width:62px; background:none; color:#002a56;font-size:12px;font-weight:normal; padding-top:2px; }
+.menu ul ul li a:hover{ line-height:25px;width:62px;  background:none;color:#002a56;font-size:12px;font-weight:normal; padding-top:2px;  }
+.menu ul ul li a:active{ line-height:25px;width:62px;  background:none;color:#002a56;font-size:12px;font-weight:normal; padding-top:2px;}
+.menu ul ul li a:visited{ line-height:25px;width:62px;  background:none;color:#002a56;font-size:12px;font-weight:normal; padding-top:2px; padding-left:2px;  }	
+
+.main{
+	margin:0 15px;
+	margin-bottom:50px;
+	}
+.wrap{
+	margin-bottom:10px;
+	}
+.wrap .title{
+	background:url(dj_line.jpg) 0 40px no-repeat;
+	height:45px;
+	margin-bottom:10px;
+	}	
+.wrap .title h2{
+	float:left;
+	}	
+.wrap .title .more{
+	margin-top:10px;
+	height:21px;
+	width:52px;
+	float:right;
+	background:url(m_bg.jpg) no-repeat;
+	}
+.title .more a{
+	line-height:20px;
+	text-align:center;
+	display: block;
+	}
+.xiangtong, .affairs{
+	float:left;
+	width:670px;
+	}
+.xiangtong{
+	margin-right:18px;
+	width:310px;
+	}
+.xiangtong .title{
+	height:45px;
+	line-height:45px;
+	}
+.xiangtong .title .more{
+	float:right;
+	margin-top:15px;
+	}
+.xiangtong h2{
+	font-family:microsoft yahei !important;
+	font-size:16px;
+	color:#C00;
+	}
+.moduan{
+	margin-right:0px;
+	}
+.xiangtong .con1 ul li, .affairs .con1 ul li{
+	background:url(heidian.jpg) 5px 14px no-repeat;
+	font-size:14px;
+	line-height:28px;
+	display:inline-block
+	}
+.xiangtong .con1 ul li a, .affairs .con1 ul li a{
+	padding-left:20px;
+	float:left;
+	width:560px;
+	display:block;
+	}
+.xiangtong .con1 ul li a{
+	width:285px;
+	}
+.xuexi{
+	float:right;
+	}
+.zaixian_x img{
+	margin-bottom:18px;
+	border:1px solid #CCC;
+	}	
+.jianbao img{
+	border:1px solid #CCC;
+	}	
+.vanguard .con1 ul li{
+	float:left;
+	}	
+.vanguard .con1 ul li img{
+	margin-right:17px;
+	}	
+.vanguard .con1 .zuih img{
+	margin-right:0;
+	}
+.footer{
+	font-size:12px;
+	color:#FFF;
+	line-height:28px;
+	text-align:center;
+	background:#ba2221;
+	height:28px;
+	}	
+	
+	/*子页样式*/
+.consub_l{float:left;width:222px;}
+.consub_r{float:right;width:730px;}
+.subtitle_bg{background:url(/front/images/dq_titlebg.jpg) no-repeat left top; height:35px;font-family:microsoft yahei !important; font-size:14px; line-height:32px; padding-left:35px; color:#fff; font-weight:bold;}
+.left_border{ border:3px solid #DADADA; border-top:none;}
+.p_subnav{padding:10px; padding-left:20px;}
+.p_subnav ul{padding:0px;}
+.p_subnav ul li.on{width:150px; background:url(/front/images/party_tbg.jpg) no-repeat left; width:140px; height:33px; line-height:33px; text-align:center;font-family:microsoft yahei !important;font-size:14px; }
+.p_subnav ul li{width:150px; width:140px; height:33px; line-height:33px; text-align:center;font-family:microsoft yahei !important;font-size:14px; } 
+.science_title{ float:left;}
+.main_title{font-family:microsoft yahei !important; font-size:14px;color:#C13432; float:left; font-weight:bold; padding-right:8px; line-height:30px;}
+.main_subtitle{ font-family:Arial, Helvetica, sans-serif; color:#999899; font-size:10px;line-height:35px;}
+
+ .title span{
+	margin-top:10px;
+	height:21px;
+	width:52px;
+	float:right;
+	background:url(m_bg.jpg) no-repeat;
+	text-align:center;
+	}
+	
+.content_r ul li{
+	line-height:28px;
+	background:url(heidian.jpg) 3px 12px no-repeat;
+	height:28px;
+	float:left;
+	}
+.content_r ul li a{
+	float:left;
+	display:block;
+	width:586px;
+	padding-left:18px;
+	font-size:14px;
+	}
+	/*子样式结束*/
