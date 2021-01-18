@@ -4,7 +4,11 @@ package com.ruoyi.portal.home.controller;
 
 
 import com.ruoyi.common.core.controller.BaseController;
+import com.ruoyi.system.domain.Office;
+import com.ruoyi.system.service.IOfficeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class FrontHomeController extends BaseController
 {
     private String prefix = "/front";
-
+    @Autowired
+    private IOfficeService officeService;
 
     @GetMapping("index")
     public String front()
@@ -185,6 +190,31 @@ public class FrontHomeController extends BaseController
     public String guohaoindex()
     {
         return prefix + "/guahao/index";
+    }
+
+
+  // 科室列表
+    @GetMapping("office/list")
+    public String officelist()
+    {
+        return prefix + "/office/list";
+    }
+
+
+    // 科室详情
+    @GetMapping("office/officedetail/{id}")
+    public String officedetail(@PathVariable Long id,ModelMap mmap)
+    {
+        Office office=  officeService.selectOfficeById(id);
+        mmap.put("office", office);
+        return prefix + "/office/officedetail";
+    }
+
+    // 科室医生列表
+    @GetMapping("doctor/list")
+    public String doctorlist()
+    {
+        return prefix + "/doctor/list";
     }
 
 }

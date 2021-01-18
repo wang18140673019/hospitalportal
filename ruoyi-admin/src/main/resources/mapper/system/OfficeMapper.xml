@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.OfficeMapper">
+    
+    <resultMap type="Office" id="OfficeResult">
+        <result property="id"    column="id"    />
+        <result property="officename"    column="officename"    />
+        <result property="doctornum"    column="doctornum"    />
+        <result property="officecode"    column="officecode"    />
+        <result property="introduction"    column="introduction"    />
+        <result property="flag"    column="flag"    />
+    </resultMap>
+
+    <sql id="selectOfficeVo">
+        select id, officename, doctornum, officecode, introduction, flag from office
+    </sql>
+
+    <select id="selectOfficeList" parameterType="Office" resultMap="OfficeResult">
+        <include refid="selectOfficeVo"/>
+        <where>  
+            <if test="officename != null  and officename != ''"> and officename like concat('%', #{officename}, '%')</if>
+            <if test="doctornum != null  and doctornum != ''"> and doctornum = #{doctornum}</if>
+            <if test="officecode != null  and officecode != ''"> and officecode = #{officecode}</if>
+            <if test="introduction != null  and introduction != ''"> and introduction = #{introduction}</if>
+            <if test="flag != null  and flag != ''"> and flag = #{flag}</if>
+        </where>
+    </select>
+    
+    <select id="selectOfficeById" parameterType="Long" resultMap="OfficeResult">
+        <include refid="selectOfficeVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertOffice" parameterType="Office" useGeneratedKeys="true" keyProperty="id">
+        insert into office
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="officename != null and officename != ''">officename,</if>
+            <if test="doctornum != null">doctornum,</if>
+            <if test="officecode != null">officecode,</if>
+            <if test="introduction != null and introduction != ''">introduction,</if>
+            <if test="flag != null and flag != ''">flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="officename != null and officename != ''">#{officename},</if>
+            <if test="doctornum != null">#{doctornum},</if>
+            <if test="officecode != null">#{officecode},</if>
+            <if test="introduction != null and introduction != ''">#{introduction},</if>
+            <if test="flag != null and flag != ''">#{flag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateOffice" parameterType="Office">
+        update office
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="officename != null and officename != ''">officename = #{officename},</if>
+            <if test="doctornum != null">doctornum = #{doctornum},</if>
+            <if test="officecode != null">officecode = #{officecode},</if>
+            <if test="introduction != null and introduction != ''">introduction = #{introduction},</if>
+            <if test="flag != null and flag != ''">flag = #{flag},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteOfficeById" parameterType="Long">
+        delete from office where id = #{id}
+    </delete>
+
+    <delete id="deleteOfficeByIds" parameterType="String">
+        delete from office where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
