@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.DoctorMapper">
+    
+    <resultMap type="Doctor" id="DoctorResult">
+        <result property="id"    column="id"    />
+        <result property="officecode"    column="officecode"    />
+        <result property="doctorname"    column="doctorname"    />
+        <result property="doctorcode"    column="doctorcode"    />
+        <result property="iswork"    column="iswork"    />
+        <result property="doctorintroduction"    column="doctorintroduction"    />
+        <result property="doctorprofessional"    column="doctorprofessional"    />
+        <result property="doctorspeciality"    column="doctorspeciality"    />
+        <result property="doctorimg"    column="doctorimg"    />
+    </resultMap>
+
+    <sql id="selectDoctorVo">
+        select id, officecode, doctorname, doctorcode, iswork, doctorintroduction, doctorprofessional, doctorspeciality, doctorimg from doctor
+    </sql>
+
+    <select id="selectDoctorList" parameterType="Doctor" resultMap="DoctorResult">
+        <include refid="selectDoctorVo"/>
+        <where>  
+            <if test="officecode != null  and officecode != ''"> and officecode = #{officecode}</if>
+            <if test="doctorname != null  and doctorname != ''"> and doctorname like concat('%', #{doctorname}, '%')</if>
+            <if test="doctorcode != null  and doctorcode != ''"> and doctorcode = #{doctorcode}</if>
+            <if test="iswork != null  and iswork != ''"> and iswork = #{iswork}</if>
+            <if test="doctorintroduction != null  and doctorintroduction != ''"> and doctorintroduction = #{doctorintroduction}</if>
+            <if test="doctorprofessional != null  and doctorprofessional != ''"> and doctorprofessional = #{doctorprofessional}</if>
+            <if test="doctorspeciality != null  and doctorspeciality != ''"> and doctorspeciality = #{doctorspeciality}</if>
+            <if test="doctorimg != null  and doctorimg != ''"> and doctorimg = #{doctorimg}</if>
+        </where>
+    </select>
+    
+    <select id="selectDoctorById" parameterType="Long" resultMap="DoctorResult">
+        <include refid="selectDoctorVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertDoctor" parameterType="Doctor" useGeneratedKeys="true" keyProperty="id">
+        insert into doctor
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="officecode != null">officecode,</if>
+            <if test="doctorname != null">doctorname,</if>
+            <if test="doctorcode != null">doctorcode,</if>
+            <if test="iswork != null">iswork,</if>
+            <if test="doctorintroduction != null">doctorintroduction,</if>
+            <if test="doctorprofessional != null">doctorprofessional,</if>
+            <if test="doctorspeciality != null">doctorspeciality,</if>
+            <if test="doctorimg != null">doctorimg,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="officecode != null">#{officecode},</if>
+            <if test="doctorname != null">#{doctorname},</if>
+            <if test="doctorcode != null">#{doctorcode},</if>
+            <if test="iswork != null">#{iswork},</if>
+            <if test="doctorintroduction != null">#{doctorintroduction},</if>
+            <if test="doctorprofessional != null">#{doctorprofessional},</if>
+            <if test="doctorspeciality != null">#{doctorspeciality},</if>
+            <if test="doctorimg != null">#{doctorimg},</if>
+         </trim>
+    </insert>
+
+    <update id="updateDoctor" parameterType="Doctor">
+        update doctor
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="officecode != null">officecode = #{officecode},</if>
+            <if test="doctorname != null">doctorname = #{doctorname},</if>
+            <if test="doctorcode != null">doctorcode = #{doctorcode},</if>
+            <if test="iswork != null">iswork = #{iswork},</if>
+            <if test="doctorintroduction != null">doctorintroduction = #{doctorintroduction},</if>
+            <if test="doctorprofessional != null">doctorprofessional = #{doctorprofessional},</if>
+            <if test="doctorspeciality != null">doctorspeciality = #{doctorspeciality},</if>
+            <if test="doctorimg != null">doctorimg = #{doctorimg},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteDoctorById" parameterType="Long">
+        delete from doctor where id = #{id}
+    </delete>
+
+    <delete id="deleteDoctorByIds" parameterType="String">
+        delete from doctor where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -45,7 +45,7 @@ public class OfficeController extends BaseController
      * 查询科室列表
      */
     @RequiresPermissions("system:office:list")
-    @GetMapping("/list")
+    @PostMapping("/list")
     @ResponseBody
     public TableDataInfo list(Office office)
     {

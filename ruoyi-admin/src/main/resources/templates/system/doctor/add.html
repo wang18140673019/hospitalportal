@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('新增医生')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-doctor-add">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">科室编码：</label>
+                <div class="col-sm-8">
+                    <select name="officecode" class="form-control m-b">
+                        <option value="">所有</option>
+                    </select>
+                    <span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 代码生成请选择字典属性</span>
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">医生名字：</label>
+                <div class="col-sm-8">
+                    <input name="doctorname" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">医生编码：</label>
+                <div class="col-sm-8">
+                    <input name="doctorcode" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">是否出诊：</label>
+                <div class="col-sm-8">
+                    <input name="iswork" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">医生介绍：</label>
+                <div class="col-sm-8">
+                    <input name="doctorintroduction" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">医生职称：</label>
+                <div class="col-sm-8">
+                    <input name="doctorprofessional" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">医疗专长：</label>
+                <div class="col-sm-8">
+                    <input name="doctorspeciality" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">医生照片：</label>
+                <div class="col-sm-8">
+                    <input name="doctorimg" class="form-control" type="text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="include :: footer" />
+    <script th:inline="javascript">
+        var prefix = ctx + "system/doctor"
+        $("#form-doctor-add").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/add", $('#form-doctor-add').serialize());
+            }
+        }
+    </script>
+</body>
+</html>

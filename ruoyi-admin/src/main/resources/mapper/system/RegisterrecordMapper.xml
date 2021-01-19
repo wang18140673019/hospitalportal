@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.RegisterrecordMapper">
+    
+    <resultMap type="Registerrecord" id="RegisterrecordResult">
+        <result property="id"    column="id"    />
+        <result property="username"    column="username"    />
+        <result property="usersex"    column="usersex"    />
+        <result property="userage"    column="userage"    />
+        <result property="useridentitycard"    column="useridentitycard"    />
+        <result property="medicalcard"    column="medicalcard"    />
+        <result property="gohospitaltime"    column="gohospitaltime"    />
+        <result property="createtime"    column="createtime"    />
+        <result property="descriptionofillness"    column="descriptionofillness"    />
+        <result property="doctorname"    column="doctorname"    />
+        <result property="doctorofficename"    column="doctorofficename"    />
+        <result property="doctorcode"    column="doctorcode"    />
+    </resultMap>
+
+    <sql id="selectRegisterrecordVo">
+        select id, username, usersex, userage, useridentitycard, medicalcard, gohospitaltime, createtime, descriptionofillness, doctorname, doctorofficename, doctorcode from registerrecord
+    </sql>
+
+    <select id="selectRegisterrecordList" parameterType="Registerrecord" resultMap="RegisterrecordResult">
+        <include refid="selectRegisterrecordVo"/>
+        <where>  
+            <if test="username != null  and username != ''"> and username like concat('%', #{username}, '%')</if>
+            <if test="usersex != null  and usersex != ''"> and usersex = #{usersex}</if>
+            <if test="userage != null  and userage != ''"> and userage = #{userage}</if>
+            <if test="useridentitycard != null  and useridentitycard != ''"> and useridentitycard = #{useridentitycard}</if>
+            <if test="medicalcard != null  and medicalcard != ''"> and medicalcard = #{medicalcard}</if>
+            <if test="gohospitaltime != null  and gohospitaltime != ''"> and gohospitaltime = #{gohospitaltime}</if>
+            <if test="createtime != null "> and createtime = #{createtime}</if>
+            <if test="descriptionofillness != null  and descriptionofillness != ''"> and descriptionofillness = #{descriptionofillness}</if>
+            <if test="doctorname != null  and doctorname != ''"> and doctorname like concat('%', #{doctorname}, '%')</if>
+            <if test="doctorofficename != null  and doctorofficename != ''"> and doctorofficename like concat('%', #{doctorofficename}, '%')</if>
+            <if test="doctorcode != null  and doctorcode != ''"> and doctorcode = #{doctorcode}</if>
+        </where>
+    </select>
+    
+    <select id="selectRegisterrecordById" parameterType="Long" resultMap="RegisterrecordResult">
+        <include refid="selectRegisterrecordVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertRegisterrecord" parameterType="Registerrecord" useGeneratedKeys="true" keyProperty="id">
+        insert into registerrecord
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">username,</if>
+            <if test="usersex != null">usersex,</if>
+            <if test="userage != null">userage,</if>
+            <if test="useridentitycard != null">useridentitycard,</if>
+            <if test="medicalcard != null">medicalcard,</if>
+            <if test="gohospitaltime != null">gohospitaltime,</if>
+            <if test="createtime != null">createtime,</if>
+            <if test="descriptionofillness != null">descriptionofillness,</if>
+            <if test="doctorname != null">doctorname,</if>
+            <if test="doctorofficename != null">doctorofficename,</if>
+            <if test="doctorcode != null">doctorcode,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">#{username},</if>
+            <if test="usersex != null">#{usersex},</if>
+            <if test="userage != null">#{userage},</if>
+            <if test="useridentitycard != null">#{useridentitycard},</if>
+            <if test="medicalcard != null">#{medicalcard},</if>
+            <if test="gohospitaltime != null">#{gohospitaltime},</if>
+            <if test="createtime != null">#{createtime},</if>
+            <if test="descriptionofillness != null">#{descriptionofillness},</if>
+            <if test="doctorname != null">#{doctorname},</if>
+            <if test="doctorofficename != null">#{doctorofficename},</if>
+            <if test="doctorcode != null">#{doctorcode},</if>
+         </trim>
+    </insert>
+
+    <update id="updateRegisterrecord" parameterType="Registerrecord">
+        update registerrecord
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="username != null">username = #{username},</if>
+            <if test="usersex != null">usersex = #{usersex},</if>
+            <if test="userage != null">userage = #{userage},</if>
+            <if test="useridentitycard != null">useridentitycard = #{useridentitycard},</if>
+            <if test="medicalcard != null">medicalcard = #{medicalcard},</if>
+            <if test="gohospitaltime != null">gohospitaltime = #{gohospitaltime},</if>
+            <if test="createtime != null">createtime = #{createtime},</if>
+            <if test="descriptionofillness != null">descriptionofillness = #{descriptionofillness},</if>
+            <if test="doctorname != null">doctorname = #{doctorname},</if>
+            <if test="doctorofficename != null">doctorofficename = #{doctorofficename},</if>
+            <if test="doctorcode != null">doctorcode = #{doctorcode},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteRegisterrecordById" parameterType="Long">
+        delete from registerrecord where id = #{id}
+    </delete>
+
+    <delete id="deleteRegisterrecordByIds" parameterType="String">
+        delete from registerrecord where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

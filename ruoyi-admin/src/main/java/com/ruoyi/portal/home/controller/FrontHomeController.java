@@ -4,7 +4,9 @@ package com.ruoyi.portal.home.controller;
 
 
 import com.ruoyi.common.core.controller.BaseController;
+import com.ruoyi.system.domain.Doctor;
 import com.ruoyi.system.domain.Office;
+import com.ruoyi.system.service.IDoctorService;
 import com.ruoyi.system.service.IOfficeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 
 @Controller
@@ -21,6 +25,10 @@ public class FrontHomeController extends BaseController
     private String prefix = "/front";
     @Autowired
     private IOfficeService officeService;
+
+    @Autowired
+    private IDoctorService doctorService;
+
 
     @GetMapping("index")
     public String front()
@@ -186,9 +194,10 @@ public class FrontHomeController extends BaseController
         return prefix + "/news/news";
     }
     // 挂号
-    @GetMapping("guahao/index")
-    public String guohaoindex()
+    @GetMapping("guahao/index/{doctorcode}")
+    public String guohaoindex(@PathVariable String doctorcode,ModelMap mmap)
     {
+
         return prefix + "/guahao/index";
     }
 
@@ -207,14 +216,13 @@ public class FrontHomeController extends BaseController
     {
         Office office=  officeService.selectOfficeById(id);
         mmap.put("office", office);
+        Doctor doctor = new Doctor();
+        doctor.setOfficecode(office.getOfficecode());
+        List<Doctor> doctors =doctorService.selectDoctorList(doctor);
+        mmap.put("doctors", doctors);
         return prefix + "/office/officedetail";
     }
 
-    // 科室医生列表
-    @GetMapping("doctor/list")
-    public String doctorlist()
-    {
-        return prefix + "/doctor/list";
-    }
+
 
 }
