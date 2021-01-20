@@ -6,8 +6,10 @@ package com.ruoyi.portal.home.controller;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.system.domain.Doctor;
 import com.ruoyi.system.domain.Office;
+import com.ruoyi.system.domain.Registerrecord;
 import com.ruoyi.system.service.IDoctorService;
 import com.ruoyi.system.service.IOfficeService;
+import com.ruoyi.system.service.IRegisterrecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -29,7 +32,8 @@ public class FrontHomeController extends BaseController
     @Autowired
     private IDoctorService doctorService;
 
-
+    @Autowired
+    private IRegisterrecordService registerrecordService;
     @GetMapping("index")
     public String front()
     {
@@ -193,11 +197,13 @@ public class FrontHomeController extends BaseController
     {
         return prefix + "/news/news";
     }
-    // 挂号
-    @GetMapping("guahao/index/{doctorcode}")
-    public String guohaoindex(@PathVariable String doctorcode,ModelMap mmap)
-    {
 
+
+    // 挂号
+    @GetMapping("guahao/index/{doctorname}")
+    public String guohaoindex(@PathVariable String doctorname,ModelMap mmap)
+    {
+        mmap.put("doctorname",doctorname);
         return prefix + "/guahao/index";
     }
 
@@ -223,6 +229,17 @@ public class FrontHomeController extends BaseController
         return prefix + "/office/officedetail";
     }
 
+
+    /**
+     * 新增保存挂号
+     */
+    @GetMapping("registerrecord/pcadd")
+    public String pcadd(Registerrecord registerrecord)
+    {
+        registerrecord.setCreateTime(new Date());
+        registerrecordService.insertRegisterrecord(registerrecord);
+        return "/front/guahao/" + "success";
+    }
 
 
 }

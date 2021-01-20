@@ -32,7 +32,7 @@
 
             <script type="text/javascript">
                 //script标签的type="text/javascript"可以省略
-                $.get("/system/office/list", function(result){
+                $.post("/system/office/list", function(result){
                     debugger;
                     var rows = result.rows;
                     var officelist=  $("#officelist");

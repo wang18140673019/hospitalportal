@@ -5,6 +5,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import com.ruoyi.common.annotation.Excel;
 import com.ruoyi.common.core.domain.BaseEntity;
 
+import java.util.Date;
+
 /**
  * 挂号对象 registerrecord
  * 
@@ -58,7 +60,17 @@ public class Registerrecord extends BaseEntity
     @Excel(name = "医生编码")
     private String doctorcode;
 
-    public void setId(Long id) 
+    private Date createtime;
+
+    public Date getCreatetime() {
+        return createtime;
+    }
+
+    public void setCreatetime(Date createtime) {
+        this.createtime = createtime;
+    }
+
+    public void setId(Long id)
     {
         this.id = id;
     }
