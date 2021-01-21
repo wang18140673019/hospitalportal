@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.PartyMapper">
+    
+    <resultMap type="Party" id="PartyResult">
+        <result property="id"    column="id"    />
+        <result property="theme"    column="theme"    />
+        <result property="title"    column="title"    />
+        <result property="content"    column="content"    />
+        <result property="imgurl"    column="imgurl"    />
+        <result property="publishtime"    column="publishtime"    />
+    </resultMap>
+
+    <sql id="selectPartyVo">
+        select id, theme, title, content, imgurl, publishtime from party
+    </sql>
+
+    <select id="selectPartyList" parameterType="Party" resultMap="PartyResult">
+        <include refid="selectPartyVo"/>
+        <where>  
+            <if test="theme != null  and theme != ''"> and theme = #{theme}</if>
+            <if test="title != null  and title != ''"> and title = #{title}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="imgurl != null  and imgurl != ''"> and imgurl = #{imgurl}</if>
+            <if test="publishtime != null "> and publishtime = #{publishtime}</if>
+        </where>
+    </select>
+    
+    <select id="selectPartyById" parameterType="Long" resultMap="PartyResult">
+        <include refid="selectPartyVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertParty" parameterType="Party" useGeneratedKeys="true" keyProperty="id">
+        insert into party
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="theme != null">theme,</if>
+            <if test="title != null">title,</if>
+            <if test="content != null">content,</if>
+            <if test="imgurl != null">imgurl,</if>
+            <if test="publishtime != null">publishtime,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="theme != null">#{theme},</if>
+            <if test="title != null">#{title},</if>
+            <if test="content != null">#{content},</if>
+            <if test="imgurl != null">#{imgurl},</if>
+            <if test="publishtime != null">#{publishtime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateParty" parameterType="Party">
+        update party
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="theme != null">theme = #{theme},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="imgurl != null">imgurl = #{imgurl},</if>
+            <if test="publishtime != null">publishtime = #{publishtime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deletePartyById" parameterType="Long">
+        delete from party where id = #{id}
+    </delete>
+
+    <delete id="deletePartyByIds" parameterType="String">
+        delete from party where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

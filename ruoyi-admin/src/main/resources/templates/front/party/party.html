@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
   <meta http-equiv="pragram" content="no-cache">
   <meta http-equiv="cache-control" content="no-cache, must-revalidate">
@@ -35,7 +35,6 @@
     <div class="wrap Theme">
       <div class="title">
         <h2><img src="/front/images/zhut.jpg" width="171" height="38" /></h2>
-        <div class="more"><a href="/List/news/8">more</a></div>
       </div>
       <div class="content">
         <iframe src="/front/party/pic" width="1000" marginheight="0" marginwidth="0" height="405" scrolling="no" frameborder="0" border="0"></iframe>
@@ -58,10 +57,14 @@
         <div class="title">
           <h2>支部工作</h2>
         </div>
-        <div class="con1">
+        <div class="content" >
           <ul>
-            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+            <li th:each="party:${partys}" >
+              <div th:if="${party.theme} eq '支部工作'">
+              <a th:href="'/front/party/zhubugongzuodetail/'+${party.id}" target="_blank"  th:text="${party.title}" ></a>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span th:text="${party.publishtime}" ></span>
+              </div>
+            </li>
           </ul>
         </div>
         <div class="clear"></div>

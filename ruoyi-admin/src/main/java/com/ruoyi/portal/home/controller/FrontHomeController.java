@@ -4,12 +4,8 @@ package com.ruoyi.portal.home.controller;
 
 
 import com.ruoyi.common.core.controller.BaseController;
-import com.ruoyi.system.domain.Doctor;
-import com.ruoyi.system.domain.Office;
-import com.ruoyi.system.domain.Registerrecord;
-import com.ruoyi.system.service.IDoctorService;
-import com.ruoyi.system.service.IOfficeService;
-import com.ruoyi.system.service.IRegisterrecordService;
+import com.ruoyi.system.domain.*;
+import com.ruoyi.system.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -34,6 +30,12 @@ public class FrontHomeController extends BaseController
 
     @Autowired
     private IRegisterrecordService registerrecordService;
+
+    @Autowired
+    private IPartyService partyService;
+
+    @Autowired
+    private INewsService newsService;
     @GetMapping("index")
     public String front()
     {
@@ -80,25 +82,20 @@ public class FrontHomeController extends BaseController
     }
 
 
-    @GetMapping("List/Catalog/17")
-    public String ListCatalog17()
-    {
-        return prefix + "/List/Catalog/17";
-    }
 
 
-    @GetMapping("List/News/14")
-    public String ListNews14()
-    {
-        return prefix + "/List/News/14";
-    }
+
+
 
 
 
 
     @GetMapping("party/party")
-    public String dangindex()
+    public String dangindex(Party party, ModelMap mmap)
     {
+        startPage();
+        List<Party> partys = partyService.selectPartyList(party);
+        mmap.put("partys",partys);
         return prefix + "/party/party";
     }
 
@@ -115,31 +112,42 @@ public class FrontHomeController extends BaseController
 
 // 支部工作
     @GetMapping("party/zhubugongzuo")
-    public String zhubugongzuo()
+    public String zhubugongzuo(Party party, ModelMap mmap)
     {
+        startPage();
+        party.setTheme("支部工作");
+        List<Party> partys = partyService.selectPartyList(party);
+        mmap.put("partys",partys);
         return prefix + "/party/zhubugongzuo";
     }
 
 
     // 公告纪要
     @GetMapping("party/gonggaojiyao")
-    public String gonggaojiyao()
+    public String gonggaojiyao(Party party, ModelMap mmap)
     {
+        startPage();
+        party.setTheme("公告纪要");
+        List<Party> partys = partyService.selectPartyList(party);
+        mmap.put("partys",partys);
         return prefix + "/party/gonggaojiyao";
     }
 
 
     // 公告纪要
     @GetMapping("party/gonggaojiyao/{id}")
-    public String gonggaojiyao(@PathVariable String id)
+    public String gonggaojiyao(@PathVariable Long id, ModelMap mmap)
     {
+        startPage();
+        Party party = partyService.selectPartyById(id);
+        mmap.put("party",party);
         return prefix + "/party/gonggaojiyaodetail";
     }
 
 
     // 党员在线学习
     @GetMapping("party/dangyuanzaixianxuexi")
-    public String dangyuanzaixianxuexi()
+    public String dangyuanzaixianxuexi(Party party, ModelMap mmap)
     {
         return prefix + "/party/dangyuanzaixianxuexi";
     }
@@ -154,7 +162,7 @@ public class FrontHomeController extends BaseController
 
     // 党建实务
     @GetMapping("party/dangjianshiwu")
-    public String dangjianshiwu()
+    public String dangjianshiwu(Party party, ModelMap mmap)
     {
         return prefix + "/party/dangjianshiwu";
     }
@@ -173,28 +181,37 @@ public class FrontHomeController extends BaseController
     }
     // 院志工作动态
     @GetMapping("party/yuanzhi")
-    public String yuanzhi()
+    public String yuanzhi(Party party, ModelMap mmap)
     {
         return prefix + "/party/yuanzhi";
     }
 
-    @GetMapping("party/{id}")
-    public String partydetail(@PathVariable String id)
+    @GetMapping("party/zhubugongzuodetail/{id}")
+    public String partydetail(@PathVariable Long id,ModelMap mmap)
     {
+        Party party = partyService.selectPartyById(id);
+        mmap.put("party",party);
         return prefix + "/party/zhubugongzuodetail";
     }
 
     // 医院新闻详情
     @GetMapping("news/{id}")
-    public String newsdetail(@PathVariable String id)
+    public String newsdetail(@PathVariable("id") Long id, ModelMap mmap)
+
     {
+        startPage();
+        News news = newsService.selectNewsById(id);
+        mmap.put("news",news);
         return prefix + "/news/newsdetail";
     }
 
 // 医院新闻
     @GetMapping("news/news")
-    public String news()
+    public String news(News news,ModelMap mmap)
     {
+        startPage();
+        List<News> list = newsService.selectNewsList(news);
+        mmap.put("news",list);
         return prefix + "/news/news";
     }
 
