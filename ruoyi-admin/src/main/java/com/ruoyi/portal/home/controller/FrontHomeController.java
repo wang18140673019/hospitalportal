@@ -138,7 +138,6 @@ public class FrontHomeController extends BaseController
     @GetMapping("party/gonggaojiyao/{id}")
     public String gonggaojiyao(@PathVariable Long id, ModelMap mmap)
     {
-        startPage();
         Party party = partyService.selectPartyById(id);
         mmap.put("party",party);
         return prefix + "/party/gonggaojiyaodetail";
@@ -149,14 +148,20 @@ public class FrontHomeController extends BaseController
     @GetMapping("party/dangyuanzaixianxuexi")
     public String dangyuanzaixianxuexi(Party party, ModelMap mmap)
     {
+        startPage();
+        party.setTheme("党员在线学习");
+        List<Party> partys = partyService.selectPartyList(party);
+        mmap.put("partys",partys);
         return prefix + "/party/dangyuanzaixianxuexi";
     }
 
 
     // 党员在线学习
     @GetMapping("party/dangyuanzaixianxuexi/{id}")
-    public String dangyuanzaixianxuexidetail(@PathVariable String id)
+    public String dangyuanzaixianxuexidetail(@PathVariable Long id, ModelMap mmap)
     {
+        Party party = partyService.selectPartyById(id);
+        mmap.put("party",party);
         return prefix + "/party/dangyuanzaixianxuexidetail";
     }
 
@@ -164,25 +169,37 @@ public class FrontHomeController extends BaseController
     @GetMapping("party/dangjianshiwu")
     public String dangjianshiwu(Party party, ModelMap mmap)
     {
+        startPage();
+        party.setTheme("党建实务");
+        List<Party> partys = partyService.selectPartyList(party);
+        mmap.put("partys",partys);
         return prefix + "/party/dangjianshiwu";
     }
 
     // 党建实务
     @GetMapping("party/dangjianshiwu/{id}")
-    public String dangjianshiwu(@PathVariable String id)
+    public String dangjianshiwu(@PathVariable Long id, ModelMap mmap)
     {
+        Party party = partyService.selectPartyById(id);
+        mmap.put("party",party);
         return prefix + "/party/dangjianshiwudetail";
     }
     // 院志工作动态
     @GetMapping("party/yuanzhi/{id}")
-    public String yuanzhidetail()
+    public String yuanzhidetail(@PathVariable Long id, ModelMap mmap)
     {
+        Party party = partyService.selectPartyById(id);
+        mmap.put("party",party);
         return prefix + "/party/yuanzhidetail";
     }
     // 院志工作动态
     @GetMapping("party/yuanzhi")
     public String yuanzhi(Party party, ModelMap mmap)
     {
+        startPage();
+        party.setTheme("院志工作动态");
+        List<Party> partys = partyService.selectPartyList(party);
+        mmap.put("partys",partys);
         return prefix + "/party/yuanzhi";
     }
 

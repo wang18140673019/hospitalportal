@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0047)/front/Content/News/13763 -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta http-equiv="pragram" content="no-cache">
   <meta http-equiv="cache-control" content="no-cache, must-revalidate">
@@ -39,15 +39,12 @@
 		<div class="pre_text">当前位置：<a href="/front/index">首页</a>&gt;&gt;<a href="/front/party/party">党群园地</a>&gt;&gt;<a href="/front/party/party">医院党建</a>&gt;&gt;院志工作动态</div>
 	  </div>
 	  <div>
-	  <div class="news_detail_title">学“四史”  守初心   显风范
-			<br>——南部门诊党支部开展“四史”学习教育知识竞赛	  </div>
-			  <div >
-			  <p>     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
-
-			  </div>
+          <div class="news_detail_title" th:text="${party.title}"></div>
+          <div >
+              <p th:text="${party.content}"></p>
+          </div>
 	  </div>
-	  <div>
-           下一条：<a href="/front/party/yuanzhi/2">学习“四史”秉初心   “政治生日”强党性</a><br>	  </div></div>
+	 </div>
 	  <div class="clear"></div>
 	  <div style="margin-top:0px !important;margin-top:20px height:1px; line-height:10px;"></div>
 	  <div class="news_xt"></div>

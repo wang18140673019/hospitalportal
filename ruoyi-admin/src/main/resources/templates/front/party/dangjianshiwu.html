@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0042)/front/List/News/114 -->
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>人民医院——党建</title>
 	<link rel="stylesheet" type="text/css" href="/front/images/public.css"/>
@@ -57,51 +58,13 @@
           </div>
         </div>
 	<div class="content_r">
-                               <ul>
-			<li><a href="/front/party/dangjianshiwu/1" target="_blank">学“四史”  守初心   显风范</a><span>
-( 2020-11-11 )			</span></li>
-		      </ul>
+		<ul>
+			<li th:each="party:${partys}">
+				<a th:href="'/front/party/dangjianshiwu/'+${party.id}" target="_blank"
+				   th:text="${party.title}"></a>
+				<span th:text="${party.publishtime}"></span></li>
+		</ul>
 		  <div class="clear"></div>
-		<div class="page">共 302 篇&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="/List/News/114?">首页</a>&nbsp;&nbsp;
-			<a href="/List/News/114?page=1">上一页</a>&nbsp;&nbsp;
-			<a href="/List/News/114?page=2">下一页</a>&nbsp;&nbsp;
-			<a href="/List/News/114?page=31">末页</a>&nbsp;&nbsp;&nbsp;&nbsp;
-			页次：1 / 31 页&nbsp;&nbsp;&nbsp;&nbsp; 10 篇/页&nbsp;&nbsp;&nbsp;&nbsp;
-			转到：第
-			<select name="page" onchange="location.href='/List/News/114?'+'page='+this.value;">
-				<option value="1" selected="">1</option>
-				<option value="2">2</option>
-				<option value="3">3</option>
-				<option value="4">4</option>
-				<option value="5">5</option>
-				<option value="6">6</option>
-				<option value="7">7</option>
-				<option value="8">8</option>
-				<option value="9">9</option>
-				<option value="10">10</option>
-				<option value="11">11</option>
-				<option value="12">12</option>
-				<option value="13">13</option>
-				<option value="14">14</option>
-				<option value="15">15</option>
-				<option value="16">16</option>
-				<option value="17">17</option>
-				<option value="18">18</option>
-				<option value="19">19</option>
-				<option value="20">20</option>
-				<option value="21">21</option>
-				<option value="22">22</option>
-				<option value="23">23</option>
-				<option value="24">24</option>
-				<option value="25">25</option>
-				<option value="26">26</option>
-				<option value="27">27</option>
-				<option value="28">28</option>
-				<option value="29">29</option>
-				<option value="30">30</option>
-				<option value="31">31</option>
-			</select>页</div>
                 
         </div> 
     </div>
