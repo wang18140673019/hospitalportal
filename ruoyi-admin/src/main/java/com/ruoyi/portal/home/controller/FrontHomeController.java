@@ -81,6 +81,11 @@ public class FrontHomeController extends BaseController
         return prefix + "/hospital/Traffic";
     }
 
+    @GetMapping("List/Catalog/17")
+    public String ListCatalog17()
+    {
+        return prefix + "/List/Catalog/17";
+    }
 
 
 
