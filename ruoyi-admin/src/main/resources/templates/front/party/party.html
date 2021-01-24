@@ -38,17 +38,6 @@
       </div>
       <div class="content">
         <iframe src="/front/party/pic" width="1000" marginheight="0" marginwidth="0" height="405" scrolling="no" frameborder="0" border="0"></iframe>
-        <div class="clear"></div>
-      </div>
-    </div>
-    <div class="P_affairs">
-      <div class="wrap affairs">
-        <ifsyifocusrame src="/front/party/p" width="670" marginheight="0" marginwidth="0" height="300" scrolling="no" frameborder="0" border="0"></ifsyifocusrame>
-      </div>
-      <div class="xuexi">
-        <div class="jianbao"><a href="/List/news/547"><img src="/front/images/lxyz.jpg" width="270" height="100" border="0" /></a></div>
-        <div class="jianbao"><a href="/List/news/517"><img src="/front/images/xxjb.jpg" width="270" height="100" border="0" /></a></div>
-        <div class="jianbao"><a href="/List/news/509"><img src="/front/images/1212.jpg" width="270" height="100" border="0" /></a></div>
       </div>
       <div class="clear"></div>
     </div>
@@ -75,8 +64,12 @@
         </div>
         <div class="con1">
           <ul>
-            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-            <li>XXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+            <li th:each="party:${partys}" >
+              <div th:if="${party.theme} eq '党建实务'">
+                <a th:href="'/front/party/dangjianshiwu/'+${party.id}" target="_blank"  th:text="${party.title}" ></a>
+                <span>&nbsp;&nbsp;&nbsp;</span> <span th:text="${party.publishtime}" ></span>
+              </div>
+            </li>
           </ul>
         </div>
         <div class="clear"></div>
@@ -87,8 +80,12 @@
         </div>
         <div class="con1">
          <ul>
-           <li>XXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-           <li>XXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
+           <li th:each="party:${partys}" >
+             <div th:if="${party.theme} eq '院志工作动态'">
+               <a th:href="'/front/party/yuanzhi/'+${party.id}" target="_blank"  th:text="${party.title}" ></a>
+               <span>&nbsp;&nbsp;&nbsp;</span> <span th:text="${party.publishtime}" ></span>
+             </div>
+           </li>
          </ul>
         </div>
         <div class="clear"></div>

@@ -35,10 +35,13 @@ public class FrontHomeController extends BaseController
     private IPartyService partyService;
 
     @Autowired
-    private INewsService newsService;
+private INewsService newsService;
     @GetMapping("index")
-    public String front()
+    public String front(News news, ModelMap mmap)
     {
+        startPage();
+        List<News> newslist = newsService.selectNewsList(news);
+        mmap.put("newslist",newslist);
         return prefix + "/index";
     }
 
