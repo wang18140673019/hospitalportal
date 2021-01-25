@@ -21,14 +21,13 @@ import java.util.List;
 
 
 @Controller
-
 public class HomeController extends BaseController
 {
-    private String prefix = "/front";
+    private String prefix = "front";
 
     @Autowired
     private INewsService newsService;
-    @GetMapping("/")
+    @GetMapping("")
     public String front(News news, ModelMap mmap)
     {
         startPage();

@@ -21,7 +21,7 @@ import java.util.List;
 @RequestMapping("/front/")
 public class FrontHomeController extends BaseController
 {
-    private String prefix = "/front";
+    private String prefix = "front";
     @Autowired
     private IOfficeService officeService;
 
