@@ -26,6 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="createuser != null  and createuser != ''"> and createuser = #{createuser}</if>
             <if test="createtime != null "> and createtime = #{createtime}</if>
         </where>
+        order by id desc
     </select>
     
     <select id="selectNewsById" parameterType="Long" resultMap="NewsResult">

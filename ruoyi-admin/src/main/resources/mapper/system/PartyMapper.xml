@@ -26,6 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="imgurl != null  and imgurl != ''"> and imgurl = #{imgurl}</if>
             <if test="publishtime != null "> and publishtime = #{publishtime}</if>
         </where>
+        order by id desc
     </select>
     
     <select id="selectPartyById" parameterType="Long" resultMap="PartyResult">

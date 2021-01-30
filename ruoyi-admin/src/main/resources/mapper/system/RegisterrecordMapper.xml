@@ -38,6 +38,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="doctorofficename != null  and doctorofficename != ''"> and doctorofficename like concat('%', #{doctorofficename}, '%')</if>
             <if test="doctorcode != null  and doctorcode != ''"> and doctorcode = #{doctorcode}</if>
         </where>
+        order by id desc
     </select>
     
     <select id="selectRegisterrecordById" parameterType="Long" resultMap="RegisterrecordResult">

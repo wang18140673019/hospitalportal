@@ -26,6 +26,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="introduction != null  and introduction != ''"> and introduction = #{introduction}</if>
             <if test="flag != null  and flag != ''"> and flag = #{flag}</if>
         </where>
+        order by id desc
     </select>
     
     <select id="selectOfficeById" parameterType="Long" resultMap="OfficeResult">

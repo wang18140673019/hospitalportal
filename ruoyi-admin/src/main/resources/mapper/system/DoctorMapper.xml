@@ -32,6 +32,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="doctorspeciality != null  and doctorspeciality != ''"> and doctorspeciality = #{doctorspeciality}</if>
             <if test="doctorimg != null  and doctorimg != ''"> and doctorimg = #{doctorimg}</if>
         </where>
+        order by id desc
     </select>
     
     <select id="selectDoctorById" parameterType="Long" resultMap="DoctorResult">
