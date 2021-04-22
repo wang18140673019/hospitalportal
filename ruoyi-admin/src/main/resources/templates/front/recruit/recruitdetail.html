@@ -1,0 +1,60 @@
+﻿<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>人民医院</title>
+    <link rel="stylesheet" type="text/css" href="/front/images/public.css">
+    <link rel="stylesheet" type="text/css" href="/front/images/science.css">
+    <script language="javascript" type="text/javascript" src="/front/js/menu.js/menu.js"></script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="header">
+        <div class="header_t2">
+            <div class="renshi">
+                <img src="/front/images/rsgl_logo.jpg" width="550" height="86"></div>
+        </div>
+    </div>
+
+    <div class="jianb"></div>
+    <div class="con">
+        <div class="shang">
+            <div class="zhgl_l">
+                <div class="jop">
+                    <div class="jop_s"><img src="/front/images/jop_s.jpg" width="280" height="9"></div>
+                    <div class="jop_m">
+                        <h2>人事管理</h2>
+                        <li><a href="#">人事表格下载</a></li>
+                        </ul>
+
+
+                    </div>
+                    <div class="jop_x"><img src="/front/images/jop_x.jpg" width="280" height="9"></div>
+                </div>
+
+
+                <div class="ks_lj"><a href="/front/news/news"><img src="/front/images/jop_gg.jpg" width="278" height="78" border="0"></a></div>
+            </div>
+            <div class="zhgl_r">
+            <div class="pre_c">
+                    <div class="pre_arrow"><img src="/front/images/pre_icon.gif" width="17" height="17"></div>
+                    <div class="pre_text"><a href="/front/index">首页</a></div>
+                </div>
+                <div class="wrap">
+                    <div class="content">
+                        <div class="news_detail_title" th:text="${recruit.title}"></div>
+                        <div >
+                            <p th:utext="${recruit.content}">     </p>
+
+                        </div>
+
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="footer">人民医院 版权所有</div>
+        </div>
+
+
+    </div></body></html>

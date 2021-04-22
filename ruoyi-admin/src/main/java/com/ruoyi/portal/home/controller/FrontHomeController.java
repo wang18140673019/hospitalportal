@@ -4,6 +4,8 @@ package com.ruoyi.portal.home.controller;
 
 
 import com.ruoyi.common.core.controller.BaseController;
+import com.ruoyi.common.core.domain.AjaxResult;
+import com.ruoyi.common.utils.poi.ExcelUtil;
 import com.ruoyi.system.domain.*;
 import com.ruoyi.system.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
 import java.util.List;
@@ -23,7 +26,11 @@ public class FrontHomeController extends BaseController
 {
     private String prefix = "front";
     @Autowired
+    private INavigationService navigationService;
+    @Autowired
     private IOfficeService officeService;
+    @Autowired
+    private IRecruitService recruitService;
 
     @Autowired
     private IDoctorService doctorService;
@@ -105,6 +112,54 @@ private INewsService newsService;
         List<Party> partys = partyService.selectPartyList(party);
         mmap.put("partys",partys);
         return prefix + "/party/party";
+    }
+
+    @GetMapping("recruit/recruit")
+    public String recruit(Recruit recruit, ModelMap mmap)
+    {
+        startPage();
+        List<Recruit> recruits = recruitService.selectRecruitList(recruit);
+        mmap.put("recruits",recruits);
+        return prefix + "/recruit/recruit";
+    }
+
+
+    @GetMapping("recruit/{id}")
+    public String recruitdetail(@PathVariable("id") Long id, ModelMap mmap)
+
+    {
+        startPage();
+        Recruit recruit = recruitService.selectRecruitById(id);
+        mmap.put("recruit",recruit);
+        return prefix + "/recruit/recruitdetail";
+    }
+
+
+    @GetMapping("navigation/navigation")
+    public String navigations(Navigation navigation, ModelMap mmap)
+    {
+        startPage();
+        List<Navigation> navigations = navigationService.selectNavigationList(navigation);
+        mmap.put("navigations",navigations);
+        return prefix + "/navigation/navigation";
+    }
+
+
+    @GetMapping("navigation/{id}")
+    public String navigationdetail(@PathVariable("id") Long id, ModelMap mmap)
+
+    {
+        startPage();
+        Navigation navigation = navigationService.selectNavigationById(id);
+        mmap.put("navigation",navigation);
+        return prefix + "/navigation/navigationdetail";
+    }
+    @RequestMapping("/recruit/export")
+    public AjaxResult export(Recruit recruit)
+    {
+        List<Recruit> list = recruitService.selectRecruitList(recruit);
+        ExcelUtil<Recruit> util = new ExcelUtil<Recruit>(Recruit.class);
+        return util.exportExcel(list, "recruit");
     }
 
     @GetMapping("party/p")

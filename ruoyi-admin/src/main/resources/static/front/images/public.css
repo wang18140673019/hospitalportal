@@ -37,6 +37,8 @@ body{
 .header_t{
 	background:url(header_bg.jpg) repeat-x;
 	}
+.header_t2{
+}
 .logo{
 	float:left;
 	height:86px;
@@ -45,6 +47,14 @@ body{
 	margin-left:0px;
 	display:inline;
 	}
+
+.renshi{
+	height:86px;
+	width:248px;
+	margin-top:23px;
+	margin-left:0px;
+	display:inline;
+}
 .related_l{
 	float:right;
 	margin-top:67px;
@@ -127,7 +137,9 @@ body{
 .nav ul ul li a:hover{ line-height:25px;width:62px;  background:none;color:#002a56;font-size:12px;font-weight:normal; padding-top:2px;  }
 .nav ul ul li a:active{ line-height:25px;width:62px;  background:none;color:#002a56;font-size:12px;font-weight:normal; padding-top:2px;}
 .nav ul ul li a:visited{ line-height:25px;width:62px;  background:none;color:#002a56;font-size:12px;font-weight:normal; padding-top:2px; padding-left:2px;  }
-.banner {overflow：hidden;}	
+.banner {
+	overflow:hidden;
+}
 /*主体部分——部分*/
 .more {
 	line-height:20px;

@@ -92,6 +92,11 @@
     width: 80px;
 }
 
+.z_text {
+    float: left;
+    width: 680px;
+}
+
 .y_js {
     float: right;
     width: 390px;

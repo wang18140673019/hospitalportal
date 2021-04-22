@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.NavigationMapper">
+    
+    <resultMap type="Navigation" id="NavigationResult">
+        <result property="id"    column="id"    />
+        <result property="title"    column="title"    />
+        <result property="content"    column="content"    />
+        <result property="createuser"    column="createuser"    />
+    </resultMap>
+
+    <sql id="selectNavigationVo">
+        select id, title, content, createuser, createtime from navigation
+    </sql>
+
+    <select id="selectNavigationList" parameterType="Navigation" resultMap="NavigationResult">
+        <include refid="selectNavigationVo"/>
+        <where>  
+            <if test="title != null  and title != ''"> and title = #{title}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="createuser != null  and createuser != ''"> and createuser = #{createuser}</if>
+        </where>
+        order by id desc
+    </select>
+    
+    <select id="selectNavigationById" parameterType="Long" resultMap="NavigationResult">
+        <include refid="selectNavigationVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertNavigation" parameterType="Navigation" useGeneratedKeys="true" keyProperty="id">
+        insert into navigation
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="title != null">title,</if>
+            <if test="content != null">content,</if>
+            <if test="createuser != null">createuser</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="title != null">#{title},</if>
+            <if test="content != null">#{content},</if>
+            <if test="createuser != null">#{createuser}</if>
+         </trim>
+    </insert>
+
+    <update id="updateNavigation" parameterType="Navigation">
+        update navigation
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="title != null">title = #{title},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="createuser != null">createuser = #{createuser}</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteNavigationById" parameterType="Long">
+        delete from navigation where id = #{id}
+    </delete>
+
+    <delete id="deleteNavigationByIds" parameterType="String">
+        delete from navigation where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>

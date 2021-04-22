@@ -1,0 +1,72 @@
+﻿<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>人民医院——就医导航</title>
+    <link rel="stylesheet" type="text/css" href="/front/images/public.css">
+    <link rel="stylesheet" type="text/css" href="/front/images/science.css">
+    <script language="javascript" type="text/javascript" src="/front/js/menu.js"></script>
+</head>
+
+    <body>
+        <div class="wrapper">
+            <div class="header">
+                <div class="header_t">
+                    <div class="logo"><img src="/front/images/jydh_logo.jpg" width="560" height="86"></div>
+                    <div class="joinus">
+                    </div>
+
+                </div>
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="jianb"></div>
+            <div class="con">
+                <div class="shang">
+                    <div class="zhgl_r0" >&nbsp;</div>
+                    <div class="zhgl_r1">
+                        <div class="ompany_p">
+                            <div class="title">
+                                <h2><img src="/front/images/jydh_t.jpg" width="150" height="18"></h2>
+
+                                <div class="clear"></div>
+                            </div>
+                            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class="MsoNormal" align="left"><b><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; mso-bidi-font-size: 10.5pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"><font size="3">门诊服务时间：周一至周六8:00-16:30</font></span></b></p>
+                            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class="MsoNormal" align="left"><b><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; mso-bidi-font-size: 10.5pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"></span></b><b><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; mso-bidi-font-size: 10.5pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"><font size="3">门诊挂号时间：周一至周六挂号时间（专家门诊）<span lang="EN-US">9:00-12:30 </span>，（普通及专病门诊）<span lang="EN-US">9:00-16:00 <!--?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /--><o:p></o:p></span></font></span></b></p>
+                            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class="MsoNormal" align="left"><b><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; mso-bidi-font-size: 10.5pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"><font size="3">就诊时间<span lang="EN-US"> 8:00-16:30<o:p></o:p></span></font></span></b></p>
+                            <p style="TEXT-ALIGN: left; LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt; mso-pagination: widow-orphan" class="MsoNormal" align="left"><b><span style="LINE-HEIGHT: 150%; FONT-FAMILY: 宋体; mso-bidi-font-size: 10.5pt; mso-bidi-font-family: 宋体; mso-font-kerning: 0pt"><font size="3">急诊服务时间：<span lang="EN-US">24</span>小时<span lang="EN-US">&nbsp;<o:p></o:p></span></font></span></b></p>
+                            <p>&nbsp;</p>
+                            <p></p>
+                        </div>
+                     <div class="ks_lj"><img src="/front/images/zxzx_p.jpg" width="278" height="78" border="0"></div>
+                        <div class="ks_lj"><a href="/front/office/list"><img src="/front/images/jygl_p.jpg" width="278" height="78" border="0"></a></div>
+                    </div>
+                    <div class="zhgl_r">
+                        <div class="pre_c">
+                            <div class="pre_arrow"><img src="/front/images/pre_icon.gif" width="17" height="17"></div>
+                            <div class="pre_text"><a href="/front/index">首页</a></div>
+                        </div>
+                        <div class="wrap">
+                            <div class="title">
+                                <div class="main_title">信息查询</div>
+                                <div class="main_subtitle"></div>
+                            </div>
+                            <div class="content">
+                                <ul>
+                                    <li th:each="navigation:${navigations}" >
+                                        <a th:href="'/front/navigation/'+${navigation.id}" target="_blank"  th:text="${navigation.title}" ></a>
+                                        <span th:text="${navigation.createuser}" ></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="footer">人民医院 版权所有</div>
+        </div>
+
+
+
+    </body></html>

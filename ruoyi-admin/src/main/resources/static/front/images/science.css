@@ -1,4 +1,4 @@
-
+﻿@charset "utf-8";
 /**/
 ul, ol { list-style-type: none; margin:0px; padding:0px;}
 .clearfix:before, .clearfix:after { content:""; display:table; }
@@ -88,14 +88,21 @@ ul, ol { list-style-type: none; margin:0px; padding:0px;}
 	float:left;
 	width:280px;
 	}
+.zhgl_r0{
+	float:left;
+	width:100px;
+}
 .zhgl_r{
-	float:right;
+	float:left;
 	width:700px;
 	}
+.zhgl_r1{
+	float:left;
+}
 .ompany_p{
 	background:url(hsz_zbg.jpg) no-repeat;
 	width:280px;
-	height:360px;
+	height:280px;
 	margin-bottom:15px;
 	}
 .ompany_p .title{
@@ -571,7 +578,7 @@ background: url("heidian.jpg") no-repeat scroll 3px 12px transparent;
 	}
 .jop_m{
 	background:url(jop_m.jpg) repeat-y;
-	height:170px;
+	/*height:170px;*/
 	padding:0 20px;
 	}
 .jop_m h2{
