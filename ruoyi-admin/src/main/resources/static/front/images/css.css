@@ -85,6 +85,11 @@ ul li {list-style:none;}
 
 .main{ width:1000px; margin:0 auto; background-color:#fff;}
 .top1{ height:23px; background-color:#923224; width:1000px;}
+.indextop1 {
+	height: 23px;
+	background-color: #923224;
+	width: auto;
+}
 .top3{ padding:29px 0 0 53px;}
 .black12{ color:#000; font-size:12px;}
 .top4{ padding:17px 14px 0 0;}
