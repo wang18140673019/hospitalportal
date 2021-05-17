@@ -6,7 +6,10 @@ img{ display:block;}
 a{ text-decoration:none;}
 ul{ list-style:none;}
 .clear{clear: both;}
-body{ background:#fbf7ec;}
+body{ background:#fbf7ec;
+    font-family:宋体;
+    font-size:16px;
+}
 
 .wrap{ width: 1000px;  margin: 0 auto; background: #fff;}
 .main1{ float: left;}
@@ -18,7 +21,7 @@ body{ background:#fbf7ec;}
 
 /*tab*/
 .tab{ float: left;}
-.slideTxtBox{ width:479px; height:195px; text-align:left;}
+.slideTxtBox{ width:479px; height:195px; text-align:center;}
 .slideTxtBox .hd{ height:39px; line-height:39px; }
 .slideTxtBox .hd ul{ float:left; height:39px;   }
 .slideTxtBox .hd ul li{ float:left; width: 157px; height: 39px;  margin-right: 4px; cursor:pointer; font-size: 14px; text-align: center; color: #923225; background:url(/front/images/tabbg.jpg); }
@@ -27,7 +30,7 @@ body{ background:#fbf7ec;}
 index.html
 .slideTxtBox .bd ul{  zoom:1; padding-top: 5px; }
 .slideTxtBox .bd li{ height:30px; line-height:30px; background: url(/front/images/dian.jpg) left no-repeat; text-indent: 22px; width: 472px; overflow: hidden;}
-.slideTxtBox .bd li a{ font-size: 14px; color: #666;}
+.slideTxtBox .bd li a{ font-size: 16px; color: #666;}
 .slideTxtBox .bd li .date{ float:right; color:#666;  }
 
 /*媒体关注*/
@@ -157,6 +160,12 @@ index.html
 .health-right2{ margin-right: -10px;}
 
 .health-foot{ margin-top: 9px; *margin-top: 20px;}
+
+
+.fa-arrow-circle-right:before{
+    content:"\f0a9";
+    font-family: FontAwesome;
+}
 
 
 
