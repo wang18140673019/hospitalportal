@@ -51,7 +51,7 @@
             <li th:each="party:${partys}" >
               <div th:if="${party.theme} eq '支部工作'">
               <a th:href="'/front/party/zhubugongzuodetail/'+${party.id}" target="_blank"  th:text="${party.title}" ></a>
-                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span th:text="${party.publishtime}" ></span>
+                <hr width="100px"   style="border:none;border-top:2px dotted #333333;"></hr>
               </div>
             </li>
           </ul>
@@ -62,12 +62,12 @@
         <div class="title">
           <h2>党建实务</h2>
         </div>
-        <div class="con1">
+        <div class="content">
           <ul>
             <li th:each="party:${partys}" >
               <div th:if="${party.theme} eq '党建实务'">
                 <a th:href="'/front/party/dangjianshiwu/'+${party.id}" target="_blank"  th:text="${party.title}" ></a>
-                <span>&nbsp;&nbsp;&nbsp;</span> <span th:text="${party.publishtime}" ></span>
+                <hr width="100px"   style="border:none;border-top:2px dotted #333333;"></hr>
               </div>
             </li>
           </ul>
@@ -78,12 +78,12 @@
         <div class="title">
           <h2>院志工作动态</h2>
         </div>
-        <div class="con1">
+        <div class="content">
          <ul>
            <li th:each="party:${partys}" >
              <div th:if="${party.theme} eq '院志工作动态'">
                <a th:href="'/front/party/yuanzhi/'+${party.id}" target="_blank"  th:text="${party.title}" ></a>
-               <span>&nbsp;&nbsp;&nbsp;</span> <span th:text="${party.publishtime}" ></span>
+               <hr width="100px"   style="border:none;border-top:2px dotted #333333;"></hr>
              </div>
            </li>
          </ul>

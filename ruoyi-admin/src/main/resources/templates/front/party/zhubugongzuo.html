@@ -65,6 +65,7 @@
                 <div class="content_r">
                     <ul>
                         <li th:each="party:${partys}">
+                            <img style="float: left; height: 20px" src="/front/images/jiantou.png" ></img>
                             <a th:href="'/front/party/zhubugongzuodetail/'+${party.id}" target="_blank"
                                th:text="${party.title}"></a>
                             <span th:text="${party.publishtime}"></span></li>

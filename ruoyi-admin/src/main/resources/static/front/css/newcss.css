@@ -21,7 +21,7 @@ body{ background:#fbf7ec;
 
 /*tab*/
 .tab{ float: left;}
-.slideTxtBox{ width:479px; height:195px; text-align:center;}
+.slideTxtBox{ width:479px; height:195px;}
 .slideTxtBox .hd{ height:39px; line-height:39px; }
 .slideTxtBox .hd ul{ float:left; height:39px;   }
 .slideTxtBox .hd ul li{ float:left; width: 157px; height: 39px;  margin-right: 4px; cursor:pointer; font-size: 14px; text-align: center; color: #923225; background:url(/front/images/tabbg.jpg); }
@@ -165,6 +165,10 @@ index.html
 .fa-arrow-circle-right:before{
     content:"\f0a9";
     font-family: FontAwesome;
+}
+
+.ulremovepoin{
+    list-style: none;
 }
 
 

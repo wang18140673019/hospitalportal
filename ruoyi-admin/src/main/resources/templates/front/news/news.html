@@ -31,8 +31,10 @@
                 <div class="content" >
                     <ul>
                         <li th:each="new1:${news}" >
+                            <img style="float: left; height: 20px" src="/front/images/jiantou.png" ></img>
                             <a th:href="'/front/news/'+${new1.id}" target="_blank"  th:text="${new1.title}" ></a>
                             <span th:text="${new1.createtime}" ></span>
+                            <hr width="100%"  style="border:none;border-top:2px dotted #333333;"></hr>
                         </li>
                     </ul>
                   </div>

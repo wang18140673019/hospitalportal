@@ -64,9 +64,12 @@
 	<div class="content_r">
 		<ul>
 			<li th:each="party:${partys}">
+				<img style="float: left; height: 20px" src="/front/images/jiantou.png" ></img>
 				<a th:href="'/front/party/dangyuanzaixianxuexi/'+${party.id}" target="_blank"
 				   th:text="${party.title}"></a>
-				<span th:text="${party.publishtime}"></span></li>
+				<span th:text="${party.publishtime}"></span>
+				<hr width="100%"  style="border:none;border-top:2px dotted #333333;"></hr>
+			</li>
 		</ul>
 		  <div class="clear"></div>
                 

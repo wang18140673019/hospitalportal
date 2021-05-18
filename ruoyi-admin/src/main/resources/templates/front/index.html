@@ -74,11 +74,11 @@
 						<ul><a href="/front/news/news"><li>医院新闻</li><a><a href="/front/news/news"><li>最新公告</li></a></ul>
 					</div>
 					<div class="bd">
-						<ul style="float: left; width: 479px;">
-								<li th:each="news:${newslist}">
-									<img style="float: left; height: 20px" src="/front/images/right.png" ></img>
+						<ul style="float: left; width: 479px;" class="ulremovepoin">
+								<li  th:each="news:${newslist}">
+									<img style="float: left; height: 20px" src="/front/images/jiantou.png" ></img>
 									<span class="date" th:text="${news.createtime}"></span><a th:href="'/front/news/'+${news.id}" target="_blank" th:text="${news.title}"></a>
-							</li>
+								</li>
 
 						</ul>
 					</div>

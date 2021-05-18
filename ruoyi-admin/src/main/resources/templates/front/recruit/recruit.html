@@ -4,10 +4,12 @@
     <title>人民医院</title>
     <link rel="stylesheet" type="text/css" href="/front/images/public.css">
     <link rel="stylesheet" type="text/css" href="/front/images/science.css">
+    <link rel="stylesheet" type="text/css" href="/front/images/css.css" />
     <script language="javascript" type="text/javascript" src="/front/js/menu.js/menu.js"></script>
 </head>
 
 <body>
+<img src="/front/images/logo-back.jpg" height="400px" width="100%"></img>
 <div class="wrapper">
     <div class="header">
         <div class="header_t2">
@@ -47,11 +49,13 @@
                             <div class="main_subtitle"></div>
                         </div>
                     </div>
-                    <div class="content">
+                    <div >
                         <ul>
                             <li th:each="recruit:${recruits}" >
+                                <img style="float: left; height: 20px" src="/front/images/jiantou.png" ></img>
                                 <a th:href="'/front/recruit/'+${recruit.id}" target="_blank"  th:text="${recruit.title}" ></a>
                                 <span th:text="${recruit.createuser}" ></span>
+                                <hr width="100%"  style="border:none;border-top:2px dotted #333333;"></hr>
                             </li>
                         </ul>
 
