@@ -73,18 +73,42 @@
 					<div class="hd">
 						<ul><a href="/front/news/news"><li>医院新闻</li><a><a href="/front/news/news"><li>最新公告</li></a></ul>
 					</div>
-					<div class="bd">
-						<ul style="float: left; width: 479px;" class="ulremovepoin">
+					<div style="height: 100%;width: 800px;">
+						<div class="bd">
+							<ul style="float: left; width: 30%;">
 								<li  th:each="news:${newslist}">
+								<h4>
 									<img style="float: left; height: 20px" src="/front/images/jiantou.png" ></img>
-									<span class="date" th:text="${news.createtime}"></span><a th:href="'/front/news/'+${news.id}" target="_blank" th:text="${news.title}"></a>
+									<a th:href="'/front/news/'+${news.id}" target="_blank" th:text="${news.title}"></a>
+								</h4>
 								</li>
+							</ul>
+						</div>
 
-						</ul>
+						<div class="imgBox">
+							<img  class="img-slide" src="/front/images/7c6ec7b57c18890cbacca6ce2927c5ca.jpg" alt="1" >
+							<img  class="img-slide"  src="/front/images/d5e831d80d9e51bd82246bb6c68d617f.jpeg" alt="2" style="display:none ">
+							<img  class="img-slide" src="/front/images/d4bc3213b2bf61e646cca8396a86c544.jpeg" alt="3" style="display:none ">
+						</div>
 					</div>
+
+					<script type="text/javascript">
+                        var index=0;
+                        //改变图片
+                        function ChangeImg() {
+                            index++;
+                            var a=document.getElementsByClassName("img-slide");
+                            if(index>=a.length) index=0;
+                            for(var i=0;i<a.length;i++){
+                                a[i].style.display='none';
+                            }
+                            a[index].style.display='block';
+                        }
+                        //设置定时器，每隔两秒切换一张图片
+                        setInterval(ChangeImg,3000);
+					</script>
 				</div>
 			</div>
-				<script type="text/javascript">jQuery(".slideTxtBox2").slide({effect:"left"});</script></span>
         		</div><!--content1 end-->
             </div><!--main1 end-->
 

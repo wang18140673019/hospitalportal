@@ -163,6 +163,20 @@ ul li {list-style:none;}
 	font-size:14px;
 	color:#923225;
 	}
+.imgBox {
+	width: 65%;
+	height: 100%;
+	margin: 0 auto;
+	float: right;
+
+}
+
+.img-slide{
+	float: right;
+	width: 120%;
+}
+
+
 .nav li ul {z-index:1000; display:none; position:absolute;}
 .nav li.hover ul {/*ie6不支持li:hover所以在这里写成li.hover以方便js取样式*/visibility:visible; position:absolute; display:block; width:110px;color:#002a56;margin-left:-10;margin-left:0/9;*margin-left:-40px; background:#FFC; }
 .nav ul ul li{ line-height:25px; color:#002a56;font-size:12px;font-weight:normal; padding-top:2px;background:none; text-align:center;}
