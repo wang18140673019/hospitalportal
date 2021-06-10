@@ -83,7 +83,7 @@
 								<li  th:each="news:${newslist}">
 								<h4>
 									<img style="float: left; height: 20px" src="/front/images/jiantou.png" ></img>
-									<a th:href="'/front/news/'+${news.id}" target="_blank" th:text="${news.title}"></a>
+									<a th:href="'/front/news/'+${news.id}" target="_blank" th:text="${news.title}" th:title="${news.title}"></a>
 								</h4>
 								</li>
 							</ul>
